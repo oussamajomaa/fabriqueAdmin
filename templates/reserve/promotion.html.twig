@@ -1,0 +1,143 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Consulter des Promotions{% endblock %}
+
+{% block body %}
+{% if app.user %}
+
+
+<style>
+    input {
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #777;
+    }
+
+    form input:focus {
+        border-color: blue;
+
+
+    }
+
+    .hid {
+        display: none;
+    }
+
+    table {
+        width: 100%;
+    }
+</style>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto mb-5 mt-5">
+
+            {# {% include "editor/promotion/_nav_promotion.html.twig" with {'p':1} %} #}
+
+            {# pour afficher le flash message #}
+            <div class="my-5">
+
+
+                {% include "template_parts/_flash_message.html.twig" %}
+
+                <h4 class="btn btn-info btn-sm">Liste des Promotions</h4>
+
+                {# formulaire de recherche #}
+                <form action="" class="  ml-auto w-50 bg-info" style="position: relative;">
+                    <input class="float-right form-group mr-2 " placeholder="chercher" type="text"
+                        name="chercher_promotion">
+                    <button class=" badge badge-primary mr-2" style="position: absolute;right:0;cursor:pointer"
+                        id="chercher_user" type="submit"><i class="fa fa-search "></i></button>
+                </form>
+
+                {# parcourir la table des promotions #}
+                {# استعراض كامل جدول البروموسييون #}
+                <table class="table rounded table-hover">
+
+                    <thead class="">
+                        <tr>
+                            <th scope="col" style="width: 10%;">Année</th>
+                            <th scope="col" style="width: 10%;">Début</th>
+                            <th scope="col" style="width: 10%;">Fin</th>
+                            <th scope="col" style="width: 45%;">Formation</th>
+                            <th colspan="2" scope="col" style="width: 15%;">Actions </th>
+
+                        </tr>
+                    </thead>
+                    {% for promotion in promotions %}
+
+
+                    <tbody>
+
+
+                        <tr class="">
+                            <td>{{ promotion.annee }}</td>
+                            <td>{{ promotion.dateDebut|date("d/m/Y") }}</td>
+                            <td>{{ promotion.dateFin|date("d/m/Y") }}</td>
+                            <td>{{ promotion.formation.intitule }}</td>
+
+                            <td>
+                                {# 3link to delete or edit or show #}
+
+                                <a class="btn btn-info btn-sm my-1" title="visualiser"
+                                    href="{{ path('reserve_show_promotion',{'id':promotion.id}) }}"><i
+                                        class="fa fa-eye"></i></a>
+
+                                
+
+
+
+                                
+                            </td>
+                            {# <td class="show-liste" style="cursor: pointer;" title="afficher les apprenants"><i class="fa fa-chevron-down icon"></i></td> #}
+
+                        </tr>
+
+
+
+                    </tbody>
+                    {% endfor %}
+
+                </table>
+               
+                <!-- pagination -->
+                {% if pages == 0 %}
+                {% set pages = 1 %}
+                {% endif %}
+                <nav class="">
+                    <ul class="pagination pagination-sm justify-content-center">
+                        <li class="page-item {% if page == 1 %}disabled{%  endif %}">
+                            <a class="page-link" href="{{ path('reserve_promotion',{'page':page - 1}) }}"
+                                tabindex="-1">&laquo;</a>
+                        </li>
+                        {% for i in 1..pages %}
+                        <li class="page-item {% if page == i %}active{% endif %}">
+                            <a class="page-link" href="{{ path('reserve_promotion',{'page':i}) }}">{{i}} <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        {% endfor %}
+
+                        <li class="page-item {% if page == pages %}disabled{%  endif %}">
+                            <a class="page-link" href="{{ path('reserve_promotion',{'page':page + 1}) }}">&raquo;</a>
+                        </li>
+                    </ul>
+                </nav>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+
+{% block javascripts %}
+
+
+
+
+
+{% endblock %}

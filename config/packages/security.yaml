@@ -1,0 +1,36 @@
+security:
+    encoders:
+        App\Entity\User:
+            algorithm: auto
+
+   
+    providers:
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: lazy
+            guard:
+                authenticators:
+                    - App\Security\UserAuthenticator
+            logout:
+                path: app_logout
+                target: main
+              
+    access_control:
+        - { path: ^/reserve, roles: ROLE_RESERVE }
+        - { path: ^/editor, roles: ROLE_EDITOR }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+
+    access_denied_url: /access_denied
+
+    role_hierarchy:
+        ROLE_EDITOR:    ROLE_RESERVE   
+        ROLE_ADMIN:     ROLE_EDITOR

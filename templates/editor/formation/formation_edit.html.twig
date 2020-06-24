@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'une formation{% endblock %}
+
+{% block body %}
+
+
+{% if app.user %}
+
+    {# structure de la page 10 colonnes de largeur et alignée à droite #}
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-xl-10 col-lg-9 col-md-8 ml-auto my-5">
+            {% include "editor/promotion/_nav_promotion.html.twig" with {'p':2} %}
+
+            <div class="my-5">
+                <!-- display formation form to edit -->
+                
+                    <h4 class="btn btn-info">Modifier une formation</h4>
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                
+
+                    <button class="btn btn-outline-danger d-block ml-auto">Enregistrer</button>
+                    {{ form_end(form) }}
+            </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

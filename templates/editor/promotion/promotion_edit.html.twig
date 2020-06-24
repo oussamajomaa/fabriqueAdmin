@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'une promotion{% endblock %}
+
+{% block body %}
+
+{% if app.user %}
+
+    {# structure de la page 10 colonnes de largeur et alignée à droite #}
+    <div class="container-fluid" >
+        <div class="row">
+            <div class="col-xl-10 col-lg-9 col-md-8 ml-auto my-5">
+                <!-- inserer le menu bar de promotion -->
+                {% include "editor/promotion/_nav_promotion.html.twig" with {'p':1} %}
+
+                <div class="my-5">
+                        <!-- display promotion form to be edited -->
+                        <h4  class="btn btn-info">Modifier une promotion</h4>
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                        
+                        <button class="btn btn-outline-danger d-block ml-auto">Enregistrer</button>
+                        {{ form_end(form) }}
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css">
+{% endblock %}
+
+{% block javascripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.min.js"></script>
+<script>
+
+    $('select').select2();
+    
+</script>
+
+{% endblock %}
