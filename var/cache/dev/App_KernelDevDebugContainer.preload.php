@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'/vendor/autoload.php';
-require __DIR__.'/ContainerKJM784y/App_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerEeaSgGH/App_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -28,6 +28,7 @@ $classes[] = 'Symfony\Bridge\Monolog\Logger';
 $classes[] = 'Symfony\Component\HttpFoundation\RequestMatcher';
 $classes[] = 'Symfony\Component\DependencyInjection\ServiceLocator';
 $classes[] = 'App\Controller\AdminController';
+$classes[] = 'App\Controller\ApprenantController';
 $classes[] = 'App\Controller\EditAbsenceController';
 $classes[] = 'App\Controller\EditApprenantController';
 $classes[] = 'App\Controller\EditCompetenceController';

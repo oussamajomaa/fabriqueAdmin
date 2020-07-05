@@ -24,16 +24,16 @@ class EditApprenantController extends AbstractController
      * 
      * @Route("/editor/apprenant/{page<\d+>?1}", name="editor_apprenant_liste")
      */
-    public function apprenant_liste(ApprenantRepository $repo, $page)
+    public function apprenant_liste(PromoAppreRepository $repo, $page)
     {
-        
+        $apprenant=$repo->findAllAppr();
         $limit = 10;
         $start = $page * $limit - $limit;
-        $all = count($repo->findAll());
+        $all = count($repo->findAllAppr());
         $pages = ceil($all / $limit);
         
         return $this->render('editor/apprenant/apprenant_liste.html.twig', [
-            'apprenants' => $repo->findBy([], ['Nom' => 'asc'], $limit, $start),
+            'apprenants' => $repo->findBy(['id'=> $apprenant], [], $limit, $start),
             'pages' => $pages,
             'page' =>$page
         ]);
@@ -167,23 +167,22 @@ class EditApprenantController extends AbstractController
      * chercher un apprenant par son nom ou prénom
      * @Route("/editor/apprenant/chercher/{page<\d+>?1}", name="editor_apprenant_chercher")
      */
-    public function chercher(Request $request, ApprenantRepository $repo, $page)
+    public function chercher(Request $request, PromoAppreRepository $repo, $page)
     {
 
         // récupérer l'input chercher
         $nom = $request->get('chercher_apprenant');
         if ($nom){
 
-            // appeler la méthode dindByNom() dans ApprenantRepository
+            // appeler la méthode dindByNom() dans PromoAppreRepository
             $apprenant = $repo->findAllByNom($nom . "%");
-    
             $limit = 10;
             $start = $page * $limit - $limit;
             $all = count($apprenant);
             $pages = ceil($all / $limit);
     
             return $this->render('editor/apprenant/apprenant_liste.html.twig', [
-                'apprenants' => $apprenant,
+                'apprenants' => $repo->findBy(['id' => $apprenant], [], $limit, $start),
                 'pages' => $pages,
                 'page' => $page
             ]);

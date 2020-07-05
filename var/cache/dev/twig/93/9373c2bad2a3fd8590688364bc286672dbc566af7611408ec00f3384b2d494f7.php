@@ -131,12 +131,12 @@ class __TwigTemplate_bd13377549e7fa35e47aaed84fc7b1d183533ff27487e34d130968d1dac
             echo "                <table class=\"table \">
 
                     <thead>
-                        <th>N°</th>
-                        <th scope=\"col\">Nom et Prénom</th>
-                        <th scope=\"col\">Email</th>
-                        <th scope=\"col\">Git compte</th>
-                        <th scope=\"col\">Avatar</th>
-                        <th scope=\"col\">Actions</th>
+                        <th style=\"width: 5%;\">N°</th>
+                        <th scope=\"col\" style=\"width: 25%;\">Nom et Prénom</th>
+                        <th scope=\"col\" style=\"width: 20%;\">Email</th>
+                        <th scope=\"col\" style=\"width: 20%;\">Git compte</th>
+                        <th scope=\"col\" style=\"width: 15%;\">Avatar</th>
+                        <th scope=\"col\" style=\"width: 15%;\">Actions</th>
                     </thead>
                     <tbody>
 
@@ -169,10 +169,11 @@ class __TwigTemplate_bd13377549e7fa35e47aaed84fc7b1d183533ff27487e34d130968d1dac
                 // line 53
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["apprenant"], "apprenant", [], "any", false, false, false, 53), "git", [], "any", false, false, false, 53), "html", null, true);
                 echo "</td>
-                            <td>";
+                            <td><img class=\"avatar-sd\" src=\"";
                 // line 54
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/brochures/"), "html", null, true);
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["apprenant"], "apprenant", [], "any", false, false, false, 54), "avatar", [], "any", false, false, false, 54), "html", null, true);
-                echo "</td>
+                echo "\" alt=\"\"></td>
 
                             <!-- un lien pour afficher un apprenant-->
                             <td><a class=\"btn btn-info btn-sm modif_promotion\" title=\"visualiser\"
@@ -218,7 +219,7 @@ class __TwigTemplate_bd13377549e7fa35e47aaed84fc7b1d183533ff27487e34d130968d1dac
 
     public function getDebugInfo()
     {
-        return array (  193 => 64,  181 => 58,  174 => 54,  170 => 53,  166 => 52,  162 => 51,  158 => 50,  155 => 49,  152 => 48,  147 => 47,  145 => 46,  131 => 34,  124 => 29,  119 => 27,  114 => 25,  109 => 23,  97 => 13,  90 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  194 => 64,  182 => 58,  174 => 54,  170 => 53,  166 => 52,  162 => 51,  158 => 50,  155 => 49,  152 => 48,  147 => 47,  145 => 46,  131 => 34,  124 => 29,  119 => 27,  114 => 25,  109 => 23,  97 => 13,  90 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -259,12 +260,12 @@ class __TwigTemplate_bd13377549e7fa35e47aaed84fc7b1d183533ff27487e34d130968d1dac
                 <table class=\"table \">
 
                     <thead>
-                        <th>N°</th>
-                        <th scope=\"col\">Nom et Prénom</th>
-                        <th scope=\"col\">Email</th>
-                        <th scope=\"col\">Git compte</th>
-                        <th scope=\"col\">Avatar</th>
-                        <th scope=\"col\">Actions</th>
+                        <th style=\"width: 5%;\">N°</th>
+                        <th scope=\"col\" style=\"width: 25%;\">Nom et Prénom</th>
+                        <th scope=\"col\" style=\"width: 20%;\">Email</th>
+                        <th scope=\"col\" style=\"width: 20%;\">Git compte</th>
+                        <th scope=\"col\" style=\"width: 15%;\">Avatar</th>
+                        <th scope=\"col\" style=\"width: 15%;\">Actions</th>
                     </thead>
                     <tbody>
 
@@ -276,7 +277,7 @@ class __TwigTemplate_bd13377549e7fa35e47aaed84fc7b1d183533ff27487e34d130968d1dac
                             <td>{{ apprenant.apprenant.FullName }}</td>
                             <td>{{ apprenant.apprenant.email }}</td>
                             <td>{{ apprenant.apprenant.git }}</td>
-                            <td>{{ apprenant.apprenant.avatar }}</td>
+                            <td><img class=\"avatar-sd\" src=\"{{ asset('uploads/brochures/') }}{{apprenant.apprenant.avatar}}\" alt=\"\"></td>
 
                             <!-- un lien pour afficher un apprenant-->
                             <td><a class=\"btn btn-info btn-sm modif_promotion\" title=\"visualiser\"

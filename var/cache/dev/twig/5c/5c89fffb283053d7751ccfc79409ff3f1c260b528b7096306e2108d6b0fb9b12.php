@@ -264,9 +264,16 @@ class __TwigTemplate_76bcafaebdab07e1c1ae7ef10be5b8ddfaef93447bd3e76a4d3f4540278
                     ";
             // line 100
             echo "                    ";
-            if (1 === twig_compare(twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["apprenant"]) || array_key_exists("apprenant", $context) ? $context["apprenant"] : (function () { throw new RuntimeError('Variable "apprenant" does not exist.', 100, $this->source); })()), "retards", [], "any", false, false, false, 100)), 0)) {
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["promotions"]) || array_key_exists("promotions", $context) ? $context["promotions"] : (function () { throw new RuntimeError('Variable "promotions" does not exist.', 100, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["promotion"]) {
                 // line 101
-                echo "                    <h6 class=\"show-liste btn-dark p-2\">Retards</h6>
+                echo "
+                    ";
+                // line 102
+                if (1 === twig_compare(twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["promotion"], "retards", [], "any", false, false, false, 102)), 0)) {
+                    // line 103
+                    echo "                    <h6 class=\"show-liste btn-dark p-2\">Retards</h6>
                     <table class=\"table table-hover\">
                         <thead>
                             <th scope=\"col\">N°</th>
@@ -275,51 +282,62 @@ class __TwigTemplate_76bcafaebdab07e1c1ae7ef10be5b8ddfaef93447bd3e76a4d3f4540278
                         </thead>
                         <tbody>
                             ";
-                // line 109
-                $context["i"] = 0;
-                // line 110
-                echo "                            ";
-                $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["apprenant"]) || array_key_exists("apprenant", $context) ? $context["apprenant"] : (function () { throw new RuntimeError('Variable "apprenant" does not exist.', 110, $this->source); })()), "retards", [], "any", false, false, false, 110));
-                foreach ($context['_seq'] as $context["_key"] => $context["retard"]) {
                     // line 111
-                    echo "                            ";
-                    $context["i"] = ((isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 111, $this->source); })()) + 1);
+                    $context["i"] = 0;
                     // line 112
-                    echo "                            <tr>
+                    echo "                            ";
+                    $context['_parent'] = $context;
+                    $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["promotion"], "retards", [], "any", false, false, false, 112));
+                    foreach ($context['_seq'] as $context["_key"] => $context["retard"]) {
+                        // line 113
+                        echo "                            ";
+                        $context["i"] = ((isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 113, $this->source); })()) + 1);
+                        // line 114
+                        echo "                            <tr>
                                 <td>";
-                    // line 113
-                    echo twig_escape_filter($this->env, (isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 113, $this->source); })()), "html", null, true);
-                    echo "</td>
+                        // line 115
+                        echo twig_escape_filter($this->env, (isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 115, $this->source); })()), "html", null, true);
+                        echo "</td>
                                 <td>";
-                    // line 114
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["retard"], "date", [], "any", false, false, false, 114), "d/m/y"), "html", null, true);
-                    echo "</td>
+                        // line 116
+                        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["retard"], "date", [], "any", false, false, false, 116), "d/m/y"), "html", null, true);
+                        echo "</td>
                                 <td>";
-                    // line 115
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["retard"], "nombreheure", [], "any", false, false, false, 115), "html", null, true);
-                    echo "</td>
+                        // line 117
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["retard"], "nombreheure", [], "any", false, false, false, 117), "html", null, true);
+                        echo "</td>
                             </tr>
                             ";
-                }
-                $_parent = $context['_parent'];
-                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['retard'], $context['_parent'], $context['loop']);
-                $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 118
-                echo "                        </tbody>
+                    }
+                    $_parent = $context['_parent'];
+                    unset($context['_seq'], $context['_iterated'], $context['_key'], $context['retard'], $context['_parent'], $context['loop']);
+                    $context = array_intersect_key($context, $_parent) + $_parent;
+                    // line 120
+                    echo "                        </tbody>
                     </table>
                     ";
+                }
+                // line 123
+                echo "                    ";
             }
-            // line 121
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['promotion'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 124
             echo "                </div>
 
                 <div>
                     ";
-            // line 125
+            // line 128
             echo "                    ";
-            if (1 === twig_compare(twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["apprenant"]) || array_key_exists("apprenant", $context) ? $context["apprenant"] : (function () { throw new RuntimeError('Variable "apprenant" does not exist.', 125, $this->source); })()), "absences", [], "any", false, false, false, 125)), 0)) {
-                // line 126
-                echo "                    <h6 class=\"show-liste btn-dark p-2\">Absences</h6>
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["promotions"]) || array_key_exists("promotions", $context) ? $context["promotions"] : (function () { throw new RuntimeError('Variable "promotions" does not exist.', 128, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["promotion"]) {
+                // line 129
+                echo "                    ";
+                if (1 === twig_compare(twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["promotion"], "absences", [], "any", false, false, false, 129)), 0)) {
+                    // line 130
+                    echo "                    <h6 class=\"show-liste btn-dark p-2\">Absences</h6>
                     <table class=\"table table-hover\">
                         <thead>
                             <th scope=\"col\">N°</th>
@@ -328,44 +346,49 @@ class __TwigTemplate_76bcafaebdab07e1c1ae7ef10be5b8ddfaef93447bd3e76a4d3f4540278
                         </thead>
                         <tbody>
                             ";
-                // line 134
-                $context["i"] = 0;
-                // line 135
-                echo "                            ";
-                $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["apprenant"]) || array_key_exists("apprenant", $context) ? $context["apprenant"] : (function () { throw new RuntimeError('Variable "apprenant" does not exist.', 135, $this->source); })()), "absences", [], "any", false, false, false, 135));
-                foreach ($context['_seq'] as $context["_key"] => $context["absence"]) {
-                    // line 136
-                    echo "                            ";
-                    $context["i"] = ((isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 136, $this->source); })()) + 1);
-                    // line 137
-                    echo "                            <tr>
-                                <td>";
                     // line 138
-                    echo twig_escape_filter($this->env, (isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 138, $this->source); })()), "html", null, true);
-                    echo "</td>
-                                <td>";
+                    $context["i"] = 0;
                     // line 139
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["absence"], "dateDebut", [], "any", false, false, false, 139), "d/m/y"), "html", null, true);
-                    echo "</td>
+                    echo "                            ";
+                    $context['_parent'] = $context;
+                    $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["promotion"], "absences", [], "any", false, false, false, 139));
+                    foreach ($context['_seq'] as $context["_key"] => $context["absence"]) {
+                        // line 140
+                        echo "                            ";
+                        $context["i"] = ((isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 140, $this->source); })()) + 1);
+                        // line 141
+                        echo "                            <tr>
                                 <td>";
-                    // line 140
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["absence"], "datefin", [], "any", false, false, false, 140), "d/m/y"), "html", null, true);
-                    echo "</td>
+                        // line 142
+                        echo twig_escape_filter($this->env, (isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 142, $this->source); })()), "html", null, true);
+                        echo "</td>
+                                <td>";
+                        // line 143
+                        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["absence"], "dateDebut", [], "any", false, false, false, 143), "d/m/y"), "html", null, true);
+                        echo "</td>
+                                <td>";
+                        // line 144
+                        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["absence"], "datefin", [], "any", false, false, false, 144), "d/m/y"), "html", null, true);
+                        echo "</td>
                             </tr>
                             ";
-                }
-                $_parent = $context['_parent'];
-                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['absence'], $context['_parent'], $context['loop']);
-                $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 143
-                echo "                        </tbody>
+                    }
+                    $_parent = $context['_parent'];
+                    unset($context['_seq'], $context['_iterated'], $context['_key'], $context['absence'], $context['_parent'], $context['loop']);
+                    $context = array_intersect_key($context, $_parent) + $_parent;
+                    // line 147
+                    echo "                        </tbody>
                     </table>
                     ";
+                }
+                // line 150
+                echo "                    ";
             }
-            // line 146
-            echo "
-                </div>
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['promotion'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 151
+            echo "                </div>
 
                 <div>
                     <h6 class=\"show-liste btn-dark p-2\">Fiche Profil</h6>
@@ -384,7 +407,7 @@ class __TwigTemplate_76bcafaebdab07e1c1ae7ef10be5b8ddfaef93447bd3e76a4d3f4540278
 
     }
 
-    // line 159
+    // line 163
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -394,7 +417,7 @@ class __TwigTemplate_76bcafaebdab07e1c1ae7ef10be5b8ddfaef93447bd3e76a4d3f4540278
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 160
+        // line 164
         echo "
 ";
         
@@ -417,7 +440,7 @@ class __TwigTemplate_76bcafaebdab07e1c1ae7ef10be5b8ddfaef93447bd3e76a4d3f4540278
 
     public function getDebugInfo()
     {
-        return array (  398 => 160,  388 => 159,  367 => 146,  362 => 143,  353 => 140,  349 => 139,  345 => 138,  342 => 137,  339 => 136,  334 => 135,  332 => 134,  322 => 126,  319 => 125,  314 => 121,  309 => 118,  300 => 115,  296 => 114,  292 => 113,  289 => 112,  286 => 111,  281 => 110,  279 => 109,  269 => 101,  266 => 100,  261 => 96,  256 => 93,  247 => 90,  243 => 89,  239 => 88,  236 => 87,  233 => 86,  228 => 85,  226 => 84,  215 => 75,  212 => 74,  207 => 70,  203 => 67,  194 => 64,  190 => 63,  186 => 62,  182 => 61,  178 => 60,  174 => 59,  171 => 58,  168 => 57,  163 => 56,  161 => 55,  137 => 34,  132 => 32,  127 => 30,  122 => 28,  113 => 22,  108 => 21,  98 => 13,  91 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  421 => 164,  411 => 163,  391 => 151,  385 => 150,  380 => 147,  371 => 144,  367 => 143,  363 => 142,  360 => 141,  357 => 140,  352 => 139,  350 => 138,  340 => 130,  337 => 129,  332 => 128,  327 => 124,  321 => 123,  316 => 120,  307 => 117,  303 => 116,  299 => 115,  296 => 114,  293 => 113,  288 => 112,  286 => 111,  276 => 103,  274 => 102,  271 => 101,  266 => 100,  261 => 96,  256 => 93,  247 => 90,  243 => 89,  239 => 88,  236 => 87,  233 => 86,  228 => 85,  226 => 84,  215 => 75,  212 => 74,  207 => 70,  203 => 67,  194 => 64,  190 => 63,  186 => 62,  182 => 61,  178 => 60,  174 => 59,  171 => 58,  168 => 57,  163 => 56,  161 => 55,  137 => 34,  132 => 32,  127 => 30,  122 => 28,  113 => 22,  108 => 21,  98 => 13,  91 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -521,7 +544,9 @@ class __TwigTemplate_76bcafaebdab07e1c1ae7ef10be5b8ddfaef93447bd3e76a4d3f4540278
 
                 <div>
                     {# si l'apprenant a des retards #}
-                    {% if apprenant.retards|length > 0 %}
+                    {% for promotion in promotions %}
+
+                    {% if promotion.retards|length > 0 %}
                     <h6 class=\"show-liste btn-dark p-2\">Retards</h6>
                     <table class=\"table table-hover\">
                         <thead>
@@ -531,7 +556,7 @@ class __TwigTemplate_76bcafaebdab07e1c1ae7ef10be5b8ddfaef93447bd3e76a4d3f4540278
                         </thead>
                         <tbody>
                             {% set i = 0 %}
-                            {% for retard in apprenant.retards %}
+                            {% for retard in promotion.retards %}
                             {% set i = i + 1 %}
                             <tr>
                                 <td>{{i}}</td>
@@ -542,11 +567,13 @@ class __TwigTemplate_76bcafaebdab07e1c1ae7ef10be5b8ddfaef93447bd3e76a4d3f4540278
                         </tbody>
                     </table>
                     {% endif %}
+                    {% endfor %}
                 </div>
 
                 <div>
                     {# si l'apprenant a des absences #}
-                    {% if apprenant.absences|length > 0 %}
+                    {% for promotion in promotions %}
+                    {% if promotion.absences|length > 0 %}
                     <h6 class=\"show-liste btn-dark p-2\">Absences</h6>
                     <table class=\"table table-hover\">
                         <thead>
@@ -556,7 +583,7 @@ class __TwigTemplate_76bcafaebdab07e1c1ae7ef10be5b8ddfaef93447bd3e76a4d3f4540278
                         </thead>
                         <tbody>
                             {% set i = 0 %}
-                            {% for absence in apprenant.absences %}
+                            {% for absence in promotion.absences %}
                             {% set i = i + 1 %}
                             <tr>
                                 <td>{{i}}</td>
@@ -567,7 +594,7 @@ class __TwigTemplate_76bcafaebdab07e1c1ae7ef10be5b8ddfaef93447bd3e76a4d3f4540278
                         </tbody>
                     </table>
                     {% endif %}
-
+                    {% endfor %}
                 </div>
 
                 <div>

@@ -20,5 +20,25 @@ class PromoAppreRepository extends ServiceEntityRepository
         parent::__construct($registry, PromoAppre::class);
     }
 
-    
+    public function findAllAppr()
+    {
+        return $this->createQueryBuilder('pa')
+            ->join('pa.promotion', 'p')
+            ->where('p.DateFin > :dateFin')
+            ->setParameter('dateFin', new \DateTime)
+            ->getQuery()->getResult();
+            dd(new \DateTime);   
+    }
+
+    public function findAllByNom($nom)
+    {
+        return $this->createQueryBuilder('pa')
+            ->join('pa.promotion', 'p')
+            ->join('pa.apprenant', 'a')
+            ->where('p.DateFin > :dateFin')
+            ->andwhere('a.Nom like :nom or a.Prenom like :nom')
+            ->setParameter('dateFin', new \DateTime)
+            ->setParameter('nom', $nom)
+            ->getQuery()->getResult();
+    }
 }

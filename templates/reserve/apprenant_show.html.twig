@@ -97,7 +97,9 @@
 
                 <div>
                     {# si l'apprenant a des retards #}
-                    {% if apprenant.retards|length > 0 %}
+                    {% for promotion in promotions %}
+
+                    {% if promotion.retards|length > 0 %}
                     <h6 class="show-liste btn-dark p-2">Retards</h6>
                     <table class="table table-hover">
                         <thead>
@@ -107,7 +109,7 @@
                         </thead>
                         <tbody>
                             {% set i = 0 %}
-                            {% for retard in apprenant.retards %}
+                            {% for retard in promotion.retards %}
                             {% set i = i + 1 %}
                             <tr>
                                 <td>{{i}}</td>
@@ -118,11 +120,13 @@
                         </tbody>
                     </table>
                     {% endif %}
+                    {% endfor %}
                 </div>
 
                 <div>
                     {# si l'apprenant a des absences #}
-                    {% if apprenant.absences|length > 0 %}
+                    {% for promotion in promotions %}
+                    {% if promotion.absences|length > 0 %}
                     <h6 class="show-liste btn-dark p-2">Absences</h6>
                     <table class="table table-hover">
                         <thead>
@@ -132,7 +136,7 @@
                         </thead>
                         <tbody>
                             {% set i = 0 %}
-                            {% for absence in apprenant.absences %}
+                            {% for absence in promotion.absences %}
                             {% set i = i + 1 %}
                             <tr>
                                 <td>{{i}}</td>
@@ -143,7 +147,7 @@
                         </tbody>
                     </table>
                     {% endif %}
-
+                    {% endfor %}
                 </div>
 
                 <div>

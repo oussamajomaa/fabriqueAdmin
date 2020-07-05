@@ -27,7 +27,10 @@
                     <i class="fas fa-home text-danger fa-lg mr-3" style="font-size:32"></i> <p class="badge badge-danger">Tableau de bord</p>
                 </div>
                 {# second line, number of promotion, training, learner and partner #}
+                
+                
                 <div class="row mt-5  text-light"  >
+                {% if is_granted('ROLE_ADMIN') %}
                     <div class="col p-1 text-center">
                         <a class="text-light" href="{{ path('admin_utilisateur') }}">
                             <div class=" bar alert-primary">
@@ -37,6 +40,7 @@
                             </div>
                         </a>
                     </div>
+                {% endif %}
                     <div class="col p-1 text-center">
                         <a class="text-light" href="{{ path('editor_promo_liste') }}">
                             <div class=" bar alert-secondary">
@@ -105,98 +109,6 @@
                         </a>
                     </div>
                 </div>
-                {# third line: details of all #}
-                {# <div class="row my-1 text-light">
-                    <div class="col p-1">
-                        <div class="bg-info p-2 rounded">
-                            <h2>Apprenants</h2>
-                            <table class="table">
-                                <thead>
-                                    <th scope="col">Nom et Prénom</th>
-                                    <th scope="col">Date de naissance</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Tel</th>
-                                </thead>
-                                {% for apprenant in apprenants %}
-                                <tr>
-                                    <td><a class="text-light"
-                                            href="{{ path('editor_apprenant_show',{'id':apprenant.id}) }}">{{apprenant.nom|upper}}
-                                            {{apprenant.prenom|upper}}</a></td>
-                                    <td><a class="text-light"
-                                            href="{{ path('editor_apprenant_show',{'id':apprenant.id}) }}">{{ apprenant.dateNaissance|date('d/m/Y') }}
-                                    </a></td>
-                                    <td><a class="text-light"
-                                            href="{{ path('editor_apprenant_show',{'id':apprenant.id}) }}">{{ apprenant.email }}</a></td>
-                                    
-                                    <td><a class="text-light"
-                                            href="{{ path('editor_apprenant_show',{'id':apprenant.id}) }}"></a>{{ apprenant.tel }}</td>
-                                </tr>
-                                {% endfor %}
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="row my-1 text-light">
-                    <div class="col p-1">
-                        <div class="bg-secondary p-2 rounded" id="promotion">
-                            <h2>Promotions</h2>
-                            <table class="table ">
-                                <thead>
-                                    <th scope="col">Année</th>
-                                    <th scope="col">Début</th>
-                                    <th scope="col">Fin</th>
-                                    <th scope="col">Formation</th>
-                                    <th scope="col">N° Apprenants</th>
-                                </thead>
-                                    {% for promotion in promotions %}
-                                    <tr>
-                                            <td><a class="text-light" href="{{ path('editor_promo_show',{'id':promotion.id}) }}">{{promotion.annee}}</a></td>
-                                            <td><a class="text-light" href="{{ path('editor_promo_show',{'id':promotion.id}) }}">{{promotion.dateDebut|date('d/m/Y')}}</a></td>
-                                            <td><a class="text-light" href="{{ path('editor_promo_show',{'id':promotion.id}) }}">{{promotion.dateFin|date('d/m/Y')}}</a></td>
-                                            <td><a class="text-light" href="{{ path('editor_promo_show',{'id':promotion.id}) }}">{{promotion.formation.intitule}}</a></td>
-                                            <td><a class="text-light" href="{{ path('editor_promo_show',{'id':promotion.id}) }}">{{promotion.apprenants|length}}</a></td>
-                                        </tr>
-                                    {% endfor %}
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="row my-1 text-light">
-                    <div class="col p-1">
-                        <div class="bg-success p-2 rounded" id="formation">
-                            <h2>Formations</h2>
-                            <table class="table">
-                                <thead>
-                                    <th scope="col">Intitulé</th>
-                                    <th scope="col">Diplôme</th>
-                                    <th scope="col">Durée</th>
-                                    <th scope="col">N° d'heures</th>
-                                </thead>
-                                    {% for formation in formations %}
-                                        <tr>
-                                            <td><a class="text-light" href="{{ path('editor_formation',{'id':formation.id}) }}">{{formation.intitule}}</a></td>
-                                            <td><a class="text-light" href="{{ path('editor_formation',{'id':formation.id}) }}">{{formation.diplome}}</a></td>
-                                            <td><a class="text-light" href="{{ path('editor_formation',{'id':formation.id}) }}">{{formation.duree}}</a></td>
-                                            <td><a class="text-light" href="{{ path('editor_formation',{'id':formation.id}) }}">{{formation.nombreHeure}}</a></td>
-                                        </tr>
-                                    {% endfor %}
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div> #}
-
-            
-
-
-            
-
-    
-
-
-
-
-            {# end body #}
            
         </div>
     </div>

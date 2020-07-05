@@ -115,7 +115,7 @@ class __TwigTemplate_cf8469253c31647b132e58d0bb098c881874465af0ec4fabfa8ddb8fcf6
                 // line 22
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/brochures/"), "html", null, true);
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["apprenant"], "apprenant", [], "any", false, false, false, 22), "avatar", [], "any", false, false, false, 22), "html", null, true);
-                echo "\" alt=\"\"></dt>
+                echo "\" alt=\"\" ></dt>
                                 <dd class=\"col-md-8 pl-5\">";
                 // line 23
                 echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["apprenant"], "apprenant", [], "any", false, false, false, 23), "fullname", [], "any", false, false, false, 23)), "html", null, true);
@@ -194,11 +194,11 @@ class __TwigTemplate_cf8469253c31647b132e58d0bb098c881874465af0ec4fabfa8ddb8fcf6
                 echo "</td>
                                         <td>";
                 // line 64
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["promotion"], "promotion", [], "any", false, false, false, 64), "dateDebut", [], "any", false, false, false, 64), "m/d/Y"), "html", null, true);
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["promotion"], "promotion", [], "any", false, false, false, 64), "dateDebut", [], "any", false, false, false, 64), "d/m/Y"), "html", null, true);
                 echo "</td>
                                         <td>";
                 // line 65
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["promotion"], "promotion", [], "any", false, false, false, 65), "dateFin", [], "any", false, false, false, 65), "m/d/Y"), "html", null, true);
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["promotion"], "promotion", [], "any", false, false, false, 65), "dateFin", [], "any", false, false, false, 65), "d/m/Y"), "html", null, true);
                 echo "</td>
                                         <td>";
                 // line 66
@@ -506,7 +506,7 @@ class __TwigTemplate_cf8469253c31647b132e58d0bb098c881874465af0ec4fabfa8ddb8fcf6
                         <div class=\"col-md-4\">
                                 
                             <dl class=\"row\">
-                                <dt class=\"col-md-4\"><img class=\"avatar\" src=\"{{ asset('uploads/brochures/') }}{{apprenant.apprenant.avatar}}\" alt=\"\"></dt>
+                                <dt class=\"col-md-4\"><img class=\"avatar\" src=\"{{ asset('uploads/brochures/') }}{{apprenant.apprenant.avatar}}\" alt=\"\" ></dt>
                                 <dd class=\"col-md-8 pl-5\">{{apprenant.apprenant.fullname|upper}}</dd>
                             </dl>
                         </div>
@@ -548,8 +548,8 @@ class __TwigTemplate_cf8469253c31647b132e58d0bb098c881874465af0ec4fabfa8ddb8fcf6
                                     <tr>
                                         <td>{{i}}</td>
                                         <td>{{ promotion.promotion.annee }}</td>
-                                        <td>{{ promotion.promotion.dateDebut|date(\"m/d/Y\") }}</td>
-                                        <td>{{ promotion.promotion.dateFin|date(\"m/d/Y\") }}</td>
+                                        <td>{{ promotion.promotion.dateDebut|date(\"d/m/Y\") }}</td>
+                                        <td>{{ promotion.promotion.dateFin|date(\"d/m/Y\") }}</td>
                                         <td>{{ promotion.promotion.formation.nombreHeure }}</td>
                                         <td>{{ promotion.promotion.formation.intitule }}</td>
                                     </tr>

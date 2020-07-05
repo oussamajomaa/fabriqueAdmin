@@ -19,7 +19,7 @@
                         <div class="col-md-4">
                                 
                             <dl class="row">
-                                <dt class="col-md-4"><img class="avatar" src="{{ asset('uploads/brochures/') }}{{apprenant.apprenant.avatar}}" alt=""></dt>
+                                <dt class="col-md-4"><img class="avatar" src="{{ asset('uploads/brochures/') }}{{apprenant.apprenant.avatar}}" alt="" ></dt>
                                 <dd class="col-md-8 pl-5">{{apprenant.apprenant.fullname|upper}}</dd>
                             </dl>
                         </div>
@@ -61,8 +61,8 @@
                                     <tr>
                                         <td>{{i}}</td>
                                         <td>{{ promotion.promotion.annee }}</td>
-                                        <td>{{ promotion.promotion.dateDebut|date("m/d/Y") }}</td>
-                                        <td>{{ promotion.promotion.dateFin|date("m/d/Y") }}</td>
+                                        <td>{{ promotion.promotion.dateDebut|date("d/m/Y") }}</td>
+                                        <td>{{ promotion.promotion.dateFin|date("d/m/Y") }}</td>
                                         <td>{{ promotion.promotion.formation.nombreHeure }}</td>
                                         <td>{{ promotion.promotion.formation.intitule }}</td>
                                     </tr>

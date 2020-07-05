@@ -130,13 +130,9 @@ class __TwigTemplate_a4168597e3abbf03507922316e73171cf8a1b2cdc98a91205771242633c
                 // line 36
                 echo "
                 <h4 class=\"btn btn-info btn-sm\">Liste des Formations</h4>
-                    <form action=\"\" class=\"  ml-auto w-50 bg-info\" style=\"position: relative;\">
-                        <input class=\"float-right form-group mr-2 \" placeholder=\"chercher\" type=\"text\"
-                            name=\"chercher_formation\">
-                        <button class=\" badge badge-primary mr-2\" style=\"position: absolute;right:0;cursor:pointer\"
-                            id=\"chercher_user\" type=\"submit\"><i class=\"fa fa-search \"></i></button>
-                    </form>
-                    <table class=\"table table-hover\">
+                    ";
+                // line 44
+                echo "                    <table class=\"table table-hover\">
                         <thead>
                             <th scope=\"col\" style=\"width: 15%;\">Intitulé</th>
                             <th scope=\"col\" style=\"width: 7%;\">Durée</th>
@@ -334,7 +330,7 @@ class __TwigTemplate_a4168597e3abbf03507922316e73171cf8a1b2cdc98a91205771242633c
 
     public function getDebugInfo()
     {
-        return array (  314 => 123,  304 => 122,  291 => 117,  284 => 112,  273 => 103,  267 => 102,  264 => 101,  252 => 97,  245 => 96,  241 => 95,  236 => 93,  230 => 92,  226 => 90,  223 => 89,  220 => 88,  218 => 87,  212 => 84,  206 => 80,  193 => 73,  183 => 66,  174 => 60,  170 => 59,  166 => 58,  162 => 57,  158 => 56,  155 => 55,  151 => 54,  131 => 36,  129 => 35,  125 => 33,  123 => 32,  119 => 30,  113 => 25,  110 => 23,  108 => 22,  91 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  310 => 123,  300 => 122,  287 => 117,  280 => 112,  269 => 103,  263 => 102,  260 => 101,  248 => 97,  241 => 96,  237 => 95,  232 => 93,  226 => 92,  222 => 90,  219 => 89,  216 => 88,  214 => 87,  208 => 84,  202 => 80,  189 => 73,  179 => 66,  170 => 60,  166 => 59,  162 => 58,  158 => 57,  154 => 56,  151 => 55,  147 => 54,  135 => 44,  131 => 36,  129 => 35,  125 => 33,  123 => 32,  119 => 30,  113 => 25,  110 => 23,  108 => 22,  91 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -376,12 +372,12 @@ class __TwigTemplate_a4168597e3abbf03507922316e73171cf8a1b2cdc98a91205771242633c
                 {% include \"template_parts/_flash_message.html.twig\" %}
 
                 <h4 class=\"btn btn-info btn-sm\">Liste des Formations</h4>
-                    <form action=\"\" class=\"  ml-auto w-50 bg-info\" style=\"position: relative;\">
+                    {# <form action=\"\" class=\"  ml-auto w-50 bg-info\" style=\"position: relative;\">
                         <input class=\"float-right form-group mr-2 \" placeholder=\"chercher\" type=\"text\"
                             name=\"chercher_formation\">
                         <button class=\" badge badge-primary mr-2\" style=\"position: absolute;right:0;cursor:pointer\"
                             id=\"chercher_user\" type=\"submit\"><i class=\"fa fa-search \"></i></button>
-                    </form>
+                    </form> #}
                     <table class=\"table table-hover\">
                         <thead>
                             <th scope=\"col\" style=\"width: 15%;\">Intitulé</th>

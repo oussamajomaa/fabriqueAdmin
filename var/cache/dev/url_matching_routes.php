@@ -16,6 +16,7 @@ return [
         '/editor/dashbord' => [[['_route' => 'editor_dashbord', '_controller' => 'App\\Controller\\AdminController::dashbord'], null, null, null, false, false, null]],
         '/admin/utilisateur' => [[['_route' => 'admin_utilisateur', '_controller' => 'App\\Controller\\AdminController::utilisateur'], null, null, null, false, false, null]],
         '/admin/utilisateur/chercher' => [[['_route' => 'admin_chercher_user', '_controller' => 'App\\Controller\\AdminController::chercher'], null, null, null, false, false, null]],
+        '/apprenant/profil' => [[['_route' => 'apprenant_profil', '_controller' => 'App\\Controller\\ApprenantController::apprenant'], null, null, null, false, false, null]],
         '/editor/retard/new' => [[['_route' => 'editor_retard_new', '_controller' => 'App\\Controller\\EditAbsenceController::retard_new'], null, null, null, false, false, null]],
         '/editor/absence/new' => [[['_route' => 'editor_absence_new', '_controller' => 'App\\Controller\\EditAbsenceController::absence_new'], null, null, null, false, false, null]],
         '/editor/apprenant/new' => [[['_route' => 'editor_apprenant_new', '_controller' => 'App\\Controller\\EditApprenantController::apprenant_new'], null, null, null, false, false, null]],
@@ -100,36 +101,37 @@ return [
                     .'|contact(?'
                         .'|(?:(\\d+))?(*:765)'
                         .'|/(?'
-                            .'|delete/([^/]++)(*:792)'
-                            .'|edit/([^/]++)(*:813)'
+                            .'|chercher(?:(\\d+))?(*:795)'
+                            .'|delete/([^/]++)(*:818)'
+                            .'|edit/([^/]++)(*:839)'
                         .')'
                     .')'
                     .'|pro(?'
                         .'|motion(?'
-                            .'|(?:(\\d+))?(*:848)'
+                            .'|(?:(\\d+))?(*:874)'
                             .'|/(?'
-                                .'|edit/([^/]++)(*:873)'
-                                .'|show/([^/]++)(*:894)'
-                                .'|delete/([^/]++)(*:917)'
-                                .'|retirer/([^/]++)(*:941)'
+                                .'|edit/([^/]++)(*:899)'
+                                .'|show/([^/]++)(*:920)'
+                                .'|delete/([^/]++)(*:943)'
+                                .'|retirer/([^/]++)(*:967)'
                             .')'
                         .')'
-                        .'|_apprenant_show/([^/]++)(*:975)'
+                        .'|_apprenant_show/([^/]++)(*:1001)'
                     .')'
                     .'|formation(?'
-                        .'|(?:(\\d+))?(*:1006)'
+                        .'|(?:(\\d+))?(*:1033)'
                         .'|/(?'
-                            .'|edit/([^/]++)(*:1032)'
-                            .'|delete/([^/]++)(*:1056)'
+                            .'|edit/([^/]++)(*:1059)'
+                            .'|delete/([^/]++)(*:1083)'
                         .')'
                     .')'
                 .')'
                 .'|/reserve/(?'
                     .'|promotion(?'
-                        .'|(?:(\\d+))?(*:1102)'
-                        .'|/show/([^/]++)(*:1125)'
+                        .'|(?:(\\d+))?(*:1129)'
+                        .'|/show/([^/]++)(*:1152)'
                     .')'
-                    .'|apprenant_show/([^/]++)(*:1158)'
+                    .'|apprenant_show/([^/]++)(*:1185)'
                 .')'
             .')/?$}sDu',
     ],
@@ -163,20 +165,21 @@ return [
         712 => [[['_route' => 'editor_offre_edit', '_controller' => 'App\\Controller\\EditEntrepriseController::offre_edit'], ['id'], null, null, false, true, null]],
         735 => [[['_route' => 'editor_offre_delete', '_controller' => 'App\\Controller\\EditEntrepriseController::offre_delete'], ['id'], null, null, false, true, null]],
         765 => [[['_route' => 'editor_contact', 'page' => '1', '_controller' => 'App\\Controller\\EditEntrepriseController::contact_list'], ['page'], null, null, false, true, null]],
-        792 => [[['_route' => 'editor_contact_delete', '_controller' => 'App\\Controller\\EditEntrepriseController::contact_delete'], ['id'], null, null, false, true, null]],
-        813 => [[['_route' => 'editor_edit_contact', '_controller' => 'App\\Controller\\EditEntrepriseController::edit_contact'], ['id'], null, null, false, true, null]],
-        848 => [[['_route' => 'editor_promo_liste', 'page' => '1', '_controller' => 'App\\Controller\\EditPromotionController::promo_list'], ['page'], null, null, false, true, null]],
-        873 => [[['_route' => 'editor_edit_promotion', '_controller' => 'App\\Controller\\EditPromotionController::edit_promotion'], ['id'], null, null, false, true, null]],
-        894 => [[['_route' => 'editor_show_promotion', '_controller' => 'App\\Controller\\EditPromotionController::show_promotion'], ['id'], null, null, false, true, null]],
-        917 => [[['_route' => 'editor_delete_promotion', '_controller' => 'App\\Controller\\EditPromotionController::delete_promotion'], ['id'], null, null, false, true, null]],
-        941 => [[['_route' => 'editor_retirer_apprenant', '_controller' => 'App\\Controller\\EditPromotionController::retirer_apprenant'], ['id'], null, null, false, true, null]],
-        975 => [[['_route' => 'editor_pro_apprenant_show', '_controller' => 'App\\Controller\\EditPromotionController::pro_apprenant_show'], ['id'], null, null, false, true, null]],
-        1006 => [[['_route' => 'editor_formation', 'page' => '1', '_controller' => 'App\\Controller\\FormationController::formation'], ['page'], null, null, false, true, null]],
-        1032 => [[['_route' => 'editor_edit_formation', '_controller' => 'App\\Controller\\FormationController::edit_formation'], ['id'], null, null, false, true, null]],
-        1056 => [[['_route' => 'editor_delete_formation', '_controller' => 'App\\Controller\\FormationController::delete_formation'], ['id'], null, null, false, true, null]],
-        1102 => [[['_route' => 'reserve_promotion', 'page' => '1', '_controller' => 'App\\Controller\\ReserveController::promo_list'], ['page'], null, null, false, true, null]],
-        1125 => [[['_route' => 'reserve_show_promotion', '_controller' => 'App\\Controller\\ReserveController::show_promotion'], ['id'], null, null, false, true, null]],
-        1158 => [
+        795 => [[['_route' => 'editor_contact_chercher', 'page' => '1', '_controller' => 'App\\Controller\\EditEntrepriseController::contact_chercher'], ['page'], null, null, false, true, null]],
+        818 => [[['_route' => 'editor_contact_delete', '_controller' => 'App\\Controller\\EditEntrepriseController::contact_delete'], ['id'], null, null, false, true, null]],
+        839 => [[['_route' => 'editor_edit_contact', '_controller' => 'App\\Controller\\EditEntrepriseController::edit_contact'], ['id'], null, null, false, true, null]],
+        874 => [[['_route' => 'editor_promo_liste', 'page' => '1', '_controller' => 'App\\Controller\\EditPromotionController::promo_list'], ['page'], null, null, false, true, null]],
+        899 => [[['_route' => 'editor_edit_promotion', '_controller' => 'App\\Controller\\EditPromotionController::edit_promotion'], ['id'], null, null, false, true, null]],
+        920 => [[['_route' => 'editor_show_promotion', '_controller' => 'App\\Controller\\EditPromotionController::show_promotion'], ['id'], null, null, false, true, null]],
+        943 => [[['_route' => 'editor_delete_promotion', '_controller' => 'App\\Controller\\EditPromotionController::delete_promotion'], ['id'], null, null, false, true, null]],
+        967 => [[['_route' => 'editor_retirer_apprenant', '_controller' => 'App\\Controller\\EditPromotionController::retirer_apprenant'], ['id'], null, null, false, true, null]],
+        1001 => [[['_route' => 'editor_pro_apprenant_show', '_controller' => 'App\\Controller\\EditPromotionController::pro_apprenant_show'], ['id'], null, null, false, true, null]],
+        1033 => [[['_route' => 'editor_formation', 'page' => '1', '_controller' => 'App\\Controller\\FormationController::formation'], ['page'], null, null, false, true, null]],
+        1059 => [[['_route' => 'editor_edit_formation', '_controller' => 'App\\Controller\\FormationController::edit_formation'], ['id'], null, null, false, true, null]],
+        1083 => [[['_route' => 'editor_delete_formation', '_controller' => 'App\\Controller\\FormationController::delete_formation'], ['id'], null, null, false, true, null]],
+        1129 => [[['_route' => 'reserve_promotion', 'page' => '1', '_controller' => 'App\\Controller\\ReserveController::promo_list'], ['page'], null, null, false, true, null]],
+        1152 => [[['_route' => 'reserve_show_promotion', '_controller' => 'App\\Controller\\ReserveController::show_promotion'], ['id'], null, null, false, true, null]],
+        1185 => [
             [['_route' => 'reserve_apprenant_show', '_controller' => 'App\\Controller\\ReserveController::pro_apprenant_show'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

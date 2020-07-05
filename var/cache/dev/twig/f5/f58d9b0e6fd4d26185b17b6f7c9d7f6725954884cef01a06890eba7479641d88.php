@@ -184,11 +184,19 @@ class __TwigTemplate_7df31318133c6e35c1c17b0fff12c6122b2b26b9c5ff4b9d8e5a13dee7d
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor_pro_apprenant_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["apprenant"], "apprenant", [], "any", false, false, false, 58), "id", [], "any", false, false, false, 58)]), "html", null, true);
                 echo "\"><i class=\"fa fa-eye\"></i></a>
 
+                                    ";
+                // line 60
+                if (1 === twig_compare(twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["promotion"]) || array_key_exists("promotion", $context) ? $context["promotion"] : (function () { throw new RuntimeError('Variable "promotion" does not exist.', 60, $this->source); })()), "dateFin", [], "any", false, false, false, 60), "Y/m/d"), twig_date_format_filter($this->env, "now", "Y/m/d"))) {
+                    // line 61
+                    echo "                                    
+
                                     <a class=\"btn btn-danger btn-sm delete-record my-1\" title=\"retirer\" href=\"#\"><i
                                             class=\"fas fa-trash-alt delete-promotion\"></i></a>
-
                                     ";
-                // line 64
+                }
+                // line 66
+                echo "                                    ";
+                // line 67
                 echo "                                    <div class=\"delete-confirm border bg-light  m-auto rounded p-3\" style=\"position: absolute;top:40%;left:30%\">
                                         <div>
                                             <h4>Vous êtes sûr de vouloir supprimer?</h4>
@@ -196,14 +204,14 @@ class __TwigTemplate_7df31318133c6e35c1c17b0fff12c6122b2b26b9c5ff4b9d8e5a13dee7d
                                         <div>
                                             <a class=\"btn btn-success non\" href=\"\">Non</a>
                                             <a class=\"btn btn-danger \" href=\"";
-                // line 70
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor_retirer_apprenant", ["id" => twig_get_attribute($this->env, $this->source, $context["apprenant"], "id", [], "any", false, false, false, 70)]), "html", null, true);
+                // line 73
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor_retirer_apprenant", ["id" => twig_get_attribute($this->env, $this->source, $context["apprenant"], "id", [], "any", false, false, false, 73)]), "html", null, true);
                 echo "\">Oui</a>
                                     
                                         </div>
                                     </div>
                                     ";
-                // line 75
+                // line 78
                 echo "                                </td>
                             </tr>
                             ";
@@ -211,7 +219,7 @@ class __TwigTemplate_7df31318133c6e35c1c17b0fff12c6122b2b26b9c5ff4b9d8e5a13dee7d
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['apprenant'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 78
+            // line 81
             echo "                        </tbody>   
                     </table>
                 </div>
@@ -240,7 +248,7 @@ class __TwigTemplate_7df31318133c6e35c1c17b0fff12c6122b2b26b9c5ff4b9d8e5a13dee7d
 
     public function getDebugInfo()
     {
-        return array (  215 => 78,  207 => 75,  200 => 70,  192 => 64,  184 => 58,  176 => 54,  172 => 53,  168 => 52,  164 => 51,  160 => 50,  157 => 49,  154 => 48,  149 => 47,  147 => 46,  133 => 34,  126 => 29,  121 => 27,  116 => 25,  111 => 23,  99 => 13,  97 => 12,  90 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  223 => 81,  215 => 78,  208 => 73,  200 => 67,  198 => 66,  191 => 61,  189 => 60,  184 => 58,  176 => 54,  172 => 53,  168 => 52,  164 => 51,  160 => 50,  157 => 49,  154 => 48,  149 => 47,  147 => 46,  133 => 34,  126 => 29,  121 => 27,  116 => 25,  111 => 23,  99 => 13,  97 => 12,  90 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -304,9 +312,12 @@ class __TwigTemplate_7df31318133c6e35c1c17b0fff12c6122b2b26b9c5ff4b9d8e5a13dee7d
                                 <td><a class=\"btn btn-info btn-sm modif_promotion\" title=\"visualiser\"
                                         href=\"{{ path('editor_pro_apprenant_show',{'id':apprenant.apprenant.id}) }}\"><i class=\"fa fa-eye\"></i></a>
 
+                                    {% if promotion.dateFin|date(\"Y/m/d\")>'now'|date(\"Y/m/d\") %}
+                                    
+
                                     <a class=\"btn btn-danger btn-sm delete-record my-1\" title=\"retirer\" href=\"#\"><i
                                             class=\"fas fa-trash-alt delete-promotion\"></i></a>
-
+                                    {% endif %}
                                     {# delete confirmation #}
                                     <div class=\"delete-confirm border bg-light  m-auto rounded p-3\" style=\"position: absolute;top:40%;left:30%\">
                                         <div>

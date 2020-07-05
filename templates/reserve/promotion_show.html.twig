@@ -34,12 +34,12 @@
                 <table class="table ">
 
                     <thead>
-                        <th>N°</th>
-                        <th scope="col">Nom et Prénom</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Git compte</th>
-                        <th scope="col">Avatar</th>
-                        <th scope="col">Actions</th>
+                        <th style="width: 5%;">N°</th>
+                        <th scope="col" style="width: 25%;">Nom et Prénom</th>
+                        <th scope="col" style="width: 20%;">Email</th>
+                        <th scope="col" style="width: 20%;">Git compte</th>
+                        <th scope="col" style="width: 15%;">Avatar</th>
+                        <th scope="col" style="width: 15%;">Actions</th>
                     </thead>
                     <tbody>
 
@@ -51,7 +51,7 @@
                             <td>{{ apprenant.apprenant.FullName }}</td>
                             <td>{{ apprenant.apprenant.email }}</td>
                             <td>{{ apprenant.apprenant.git }}</td>
-                            <td>{{ apprenant.apprenant.avatar }}</td>
+                            <td><img class="avatar-sd" src="{{ asset('uploads/brochures/') }}{{apprenant.apprenant.avatar}}" alt=""></td>
 
                             <!-- un lien pour afficher un apprenant-->
                             <td><a class="btn btn-info btn-sm modif_promotion" title="visualiser"

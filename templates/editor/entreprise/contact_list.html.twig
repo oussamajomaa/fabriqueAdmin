@@ -1,7 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Gestion des Contacts{% endblock %}
+{% block stylesheets %}
 
+<style>
+    input {
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #777;
+    }
+
+    form input:focus {
+        border-color: blue;
+    }
+</style>
+
+{% endblock %}
 {% block body %}
 {% if app.user %}
 
@@ -18,6 +32,14 @@
                 {% include "template_parts/_flash_message.html.twig" %}
 
                 <h4 class="btn btn-info btn-sm">Liste des contacts</h4>
+
+                <form action="{{ path('editor_contact_chercher') }}" class="  ml-auto w-50 bg-info" style="position: relative;">
+                    <input class="float-right form-group mr-2 " placeholder="chercher par entreprise" type="text"
+                            name="chercher_contact">
+                    <button class=" badge badge-primary mr-2" style="position: absolute;right:0;cursor:pointer"
+                            id="chercher_user" type="submit"><i class="fa fa-search "></i>
+                    </button>
+                </form>
                 <table class="table table-hover">
                     <thead>
                         <th scope="col" style="width: 20%;">Entreprise</th>

@@ -1,0 +1,75 @@
+<?php //%255B50876cbd3c73b7aa8ad44bc7f876c8c7%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+            '_parameterMappings' => [
+                [
+                    'dateFin' => [
+                        0,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT p0_.id AS id_0, p0_.promotion_id AS promotion_id_1, p0_.apprenant_id AS apprenant_id_2 FROM promo_appre p0_ INNER JOIN promotion p1_ ON p0_.promotion_id = p1_.id WHERE p1_.date_fin > ?',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    'pa' => 'App\\Entity\\PromoAppre',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'promotion_id_1' => 'integer',
+                    'apprenant_id_2' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'pa' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'promotion_id_1' => 'promotion_id',
+                    'apprenant_id_2' => 'apprenant_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'pa',
+                    'promotion_id_1' => 'pa',
+                    'apprenant_id_2' => 'pa',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\PromoAppre',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

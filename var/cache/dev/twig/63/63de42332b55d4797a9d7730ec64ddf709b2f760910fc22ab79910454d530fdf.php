@@ -161,7 +161,7 @@ class __TwigTemplate_136772441951d83038ac847aea8d58406ad7d9bcd5dfff4688e77a968c7
                             <th style=\"width: 15%;\">Actions</th>
                         </thead>
                         <tbody>
-                    
+
                             ";
             // line 55
             $context['_parent'] = $context;
@@ -171,20 +171,20 @@ class __TwigTemplate_136772441951d83038ac847aea8d58406ad7d9bcd5dfff4688e77a968c7
                 echo "                            <tr>
                                 <td>";
                 // line 57
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["apprenant"], "Fullname", [], "any", false, false, false, 57), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["apprenant"], "apprenant", [], "any", false, false, false, 57), "Fullname", [], "any", false, false, false, 57), "html", null, true);
                 echo "</td>
                                 <td>";
                 // line 58
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["apprenant"], "Git", [], "any", false, false, false, 58), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["apprenant"], "apprenant", [], "any", false, false, false, 58), "Git", [], "any", false, false, false, 58), "html", null, true);
                 echo "</td>
                                 <td>";
                 // line 59
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["apprenant"], "Email", [], "any", false, false, false, 59), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["apprenant"], "apprenant", [], "any", false, false, false, 59), "Email", [], "any", false, false, false, 59), "html", null, true);
                 echo "</td>
                                 <td><img src=\"";
                 // line 60
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/brochures/"), "html", null, true);
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["apprenant"], "Avatar", [], "any", false, false, false, 60), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["apprenant"], "apprenant", [], "any", false, false, false, 60), "Avatar", [], "any", false, false, false, 60), "html", null, true);
                 echo "\" alt=\"\" class=\"avatar-sd\"></td>
                     
                                 <!-- dans la dernère cellule, il trois liens: suuprimer, modifier et visualiser -->
@@ -193,14 +193,14 @@ class __TwigTemplate_136772441951d83038ac847aea8d58406ad7d9bcd5dfff4688e77a968c7
                                     <a class=\"btn btn-info btn-sm modif_promotion my-1\" title=\"visualiser\" 
                                         href=\"";
                 // line 66
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor_apprenant_show", ["id" => twig_get_attribute($this->env, $this->source, $context["apprenant"], "id", [], "any", false, false, false, 66)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor_apprenant_show", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["apprenant"], "apprenant", [], "any", false, false, false, 66), "id", [], "any", false, false, false, 66)]), "html", null, true);
                 echo "\"><i class=\"fa fa-eye\"></i></a>
                                         
                                     <!-- modifier un apprenant -->
                                     <a class=\"btn btn-success btn-sm modif_promotion my-1\" title=\"modifier\"
                                         href=\"";
                 // line 70
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor_edit_apprenant", ["id" => twig_get_attribute($this->env, $this->source, $context["apprenant"], "id", [], "any", false, false, false, 70)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor_edit_apprenant", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["apprenant"], "apprenant", [], "any", false, false, false, 70), "id", [], "any", false, false, false, 70)]), "html", null, true);
                 echo "\"><i class=\"far fa-edit\"></i></a>
                                     
 
@@ -391,23 +391,23 @@ class __TwigTemplate_136772441951d83038ac847aea8d58406ad7d9bcd5dfff4688e77a968c7
                             <th style=\"width: 15%;\">Actions</th>
                         </thead>
                         <tbody>
-                    
+
                             {% for apprenant in apprenants %}
                             <tr>
-                                <td>{{ apprenant.Fullname }}</td>
-                                <td>{{ apprenant.Git }}</td>
-                                <td>{{ apprenant.Email }}</td>
-                                <td><img src=\"{{ asset('uploads/brochures/') }}{{ apprenant.Avatar }}\" alt=\"\" class=\"avatar-sd\"></td>
+                                <td>{{ apprenant.apprenant.Fullname }}</td>
+                                <td>{{ apprenant.apprenant.Git }}</td>
+                                <td>{{ apprenant.apprenant.Email }}</td>
+                                <td><img src=\"{{ asset('uploads/brochures/') }}{{ apprenant.apprenant.Avatar }}\" alt=\"\" class=\"avatar-sd\"></td>
                     
                                 <!-- dans la dernère cellule, il trois liens: suuprimer, modifier et visualiser -->
                                 <td>
                                     <!-- visualiser un apprenant -->
                                     <a class=\"btn btn-info btn-sm modif_promotion my-1\" title=\"visualiser\" 
-                                        href=\"{{ path('editor_apprenant_show',{'id':apprenant.id}) }}\"><i class=\"fa fa-eye\"></i></a>
+                                        href=\"{{ path('editor_apprenant_show',{'id':apprenant.apprenant.id}) }}\"><i class=\"fa fa-eye\"></i></a>
                                         
                                     <!-- modifier un apprenant -->
                                     <a class=\"btn btn-success btn-sm modif_promotion my-1\" title=\"modifier\"
-                                        href=\"{{ path('editor_edit_apprenant',{'id':apprenant.id}) }}\"><i class=\"far fa-edit\"></i></a>
+                                        href=\"{{ path('editor_edit_apprenant',{'id':apprenant.apprenant.id}) }}\"><i class=\"far fa-edit\"></i></a>
                                     
 
                                     <!-- supprimer un apprenant qui va afficher d'abord un message de confirmation -->

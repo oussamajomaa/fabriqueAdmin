@@ -44,11 +44,11 @@
                     <h4  class="btn btn-info btn-sm">Liste des Promotions</h4>
 
                     {# formulaire de recherche #}
-                    <form action="" class="  ml-auto w-50 bg-info" style="position: relative;">
+                    {# <form action="" class="  ml-auto w-50 bg-info" style="position: relative;">
                         <input class="float-right form-group mr-2 " placeholder="chercher" type="text" name="chercher_promotion">
                         <button class=" badge badge-primary mr-2" style="position: absolute;right:0;cursor:pointer" id="chercher_user"
                             type="submit"><i class="fa fa-search "></i></button>
-                    </form>
+                    </form> #}
                     
                     {# parcourir la table des promotions #}
                     {# استعراض كامل جدول البروموسييون #}
@@ -64,12 +64,10 @@
                                 
                             </tr>
                         </thead>
+
                     {% for promotion in promotions %}
                     
-
                     <tbody>
-
-                    
                             <tr class="" >
                                 <td>{{ promotion.annee }}</td>
                                 <td>{{ promotion.dateDebut|date("d/m/Y") }}</td>
@@ -81,14 +79,14 @@
 
                                     <a class="btn btn-info btn-sm my-1" title="visualiser"
                                         href="{{ path('editor_show_promotion',{'id':promotion.id}) }}"><i class="fa fa-eye"></i></a>
-
-                                    <a class="btn btn-success btn-sm modif_promotion my-1" title="modifier"
-                                        href="{{ path('editor_edit_promotion',{'id':promotion.id}) }}"><i class="far fa-edit"></i></a>
-
-                                    <a class="btn btn-danger btn-sm delete-record my-1" title="supprimer" href="#"><i
-                                            class="fas fa-trash-alt delete-promotion"></i></a>
-                                            
                                     
+                                        {% if promotion.dateFin|date('Y/m/d') > "now"|date("Y/m/d") %}
+                                            <a class="btn btn-success btn-sm modif_promotion my-1" title="modifier"
+                                                href="{{ path('editor_edit_promotion',{'id':promotion.id}) }}"><i class="far fa-edit"></i></a>
+
+                                            <a class="btn btn-danger btn-sm delete-record my-1" title="supprimer" href="#"><i
+                                                    class="fas fa-trash-alt delete-promotion"></i></a>
+                                        {% endif %}
                                     
 
                                     {# delete confirmation #}

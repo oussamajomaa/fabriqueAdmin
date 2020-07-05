@@ -192,18 +192,27 @@ class __TwigTemplate_fec7b8467585af58218cc49fe41e9d5a3a4517c3730bd3b1ade215c5a1e
             // line 95
             echo "                    
                             <li class=\"nav-item\">
-                                <a class=\"nav-link p-3 mb-2 sidebar-link text-white\" href=\"\"><i
+                                <a class=\"nav-link p-3 mb-2 sidebar-link text-white\" href=\"";
+            // line 97
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("apprenant_profil");
+            echo "\"><i
                                         class=\"fas fa-user text-light fa-lg mr-3\"></i> Profil</a>
                             </li>
                         
                            
                             <li class=\"nav-item\">
-                                <a href=\"\" class=\"nav-link text-white p-3 mb-2 sidebar-link\"><i
+                                <a href=\"";
+            // line 103
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("apprenant_profil");
+            echo "\" class=\"nav-link text-white p-3 mb-2 sidebar-link\"><i
                                         class=\"fas fa-table text-light fa-lg mr-3\"></i> Bilan Individuel</a>
                             </li>
                         
                             <li class=\"nav-item\">
-                                <a href=\"\" class=\"nav-link text-white p-3 mb-2 sidebar-link\"><i
+                                <a href=\"";
+            // line 108
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("apprenant_profil");
+            echo "\" class=\"nav-link text-white p-3 mb-2 sidebar-link\"><i
                                         class=\"fa fa-cubes text-light fa-lg mr-3\"></i> Mes Compétences</a>
                             </li>
                     
@@ -319,7 +328,7 @@ class __TwigTemplate_fec7b8467585af58218cc49fe41e9d5a3a4517c3730bd3b1ade215c5a1e
 
     public function getDebugInfo()
     {
-        return array (  296 => 181,  268 => 155,  259 => 149,  256 => 148,  244 => 139,  239 => 138,  235 => 136,  233 => 135,  228 => 132,  213 => 113,  193 => 95,  191 => 94,  188 => 93,  170 => 78,  166 => 76,  164 => 75,  161 => 74,  157 => 72,  150 => 64,  142 => 59,  134 => 54,  130 => 52,  123 => 49,  121 => 48,  114 => 44,  111 => 43,  109 => 42,  96 => 31,  92 => 29,  90 => 28,  87 => 27,  83 => 25,  81 => 24,  78 => 23,  74 => 21,  72 => 20,  69 => 19,  65 => 17,  63 => 16,  54 => 10,  43 => 1,);
+        return array (  305 => 181,  277 => 155,  268 => 149,  265 => 148,  253 => 139,  248 => 138,  244 => 136,  242 => 135,  237 => 132,  222 => 113,  214 => 108,  206 => 103,  197 => 97,  193 => 95,  191 => 94,  188 => 93,  170 => 78,  166 => 76,  164 => 75,  161 => 74,  157 => 72,  150 => 64,  142 => 59,  134 => 54,  130 => 52,  123 => 49,  121 => 48,  114 => 44,  111 => 43,  109 => 42,  96 => 31,  92 => 29,  90 => 28,  87 => 27,  83 => 25,  81 => 24,  78 => 23,  74 => 21,  72 => 20,  69 => 19,  65 => 17,  63 => 16,  54 => 10,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -420,18 +429,18 @@ class __TwigTemplate_fec7b8467585af58218cc49fe41e9d5a3a4517c3730bd3b1ade215c5a1e
                         {% if app.user.roles[0]=='ROLE_USER' %}
                     
                             <li class=\"nav-item\">
-                                <a class=\"nav-link p-3 mb-2 sidebar-link text-white\" href=\"\"><i
+                                <a class=\"nav-link p-3 mb-2 sidebar-link text-white\" href=\"{{ path('apprenant_profil') }}\"><i
                                         class=\"fas fa-user text-light fa-lg mr-3\"></i> Profil</a>
                             </li>
                         
                            
                             <li class=\"nav-item\">
-                                <a href=\"\" class=\"nav-link text-white p-3 mb-2 sidebar-link\"><i
+                                <a href=\"{{ path('apprenant_profil') }}\" class=\"nav-link text-white p-3 mb-2 sidebar-link\"><i
                                         class=\"fas fa-table text-light fa-lg mr-3\"></i> Bilan Individuel</a>
                             </li>
                         
                             <li class=\"nav-item\">
-                                <a href=\"\" class=\"nav-link text-white p-3 mb-2 sidebar-link\"><i
+                                <a href=\"{{ path('apprenant_profil') }}\" class=\"nav-link text-white p-3 mb-2 sidebar-link\"><i
                                         class=\"fa fa-cubes text-light fa-lg mr-3\"></i> Mes Compétences</a>
                             </li>
                     

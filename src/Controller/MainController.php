@@ -38,7 +38,7 @@ class MainController extends AbstractController
                 return $this->redirectToRoute('reserve_promotion');
             }
             if ($this->getUser()->getRoles()[0] == 'ROLE_USER') {
-                return $this->redirectToRoute('reserve_promotion');
+                return $this->redirectToRoute('apprenant_profil');
             }
         
         }

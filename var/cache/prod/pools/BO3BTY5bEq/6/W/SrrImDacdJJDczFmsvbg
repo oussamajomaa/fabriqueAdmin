@@ -1,0 +1,122 @@
+<?php //%255B861e841b4428957e359322ebc7993dec%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+            '_parameterMappings' => [
+                [
+                    'role1' => [
+                        0,
+                    ],
+                    'role2' => [
+                        1,
+                    ],
+                    'role3' => [
+                        2,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT u0_.id AS id_0, u0_.email AS email_1, u0_.roles AS roles_2, u0_.password AS password_3, a1_.nom AS nom_4, a1_.prenom AS prenom_5, a1_.tel AS tel_6, a1_.date_naissance AS date_naissance_7, a1_.adresse AS adresse_8, a1_.ville AS ville_9, a1_.git AS git_10, a1_.avatar AS avatar_11, a1_.status AS status_12, u0_.discr AS discr_13, a1_.offres_id AS offres_id_14 FROM user u0_ LEFT JOIN apprenant a1_ ON u0_.id = a1_.id WHERE u0_.roles LIKE ? OR u0_.roles LIKE ? OR u0_.roles LIKE ?',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    'u' => 'App\\Entity\\User',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'email_1' => 'email',
+                    'roles_2' => 'roles',
+                    'password_3' => 'password',
+                    'nom_4' => 'Nom',
+                    'prenom_5' => 'Prenom',
+                    'tel_6' => 'Tel',
+                    'date_naissance_7' => 'DateNaissance',
+                    'adresse_8' => 'Adresse',
+                    'ville_9' => 'Ville',
+                    'git_10' => 'Git',
+                    'avatar_11' => 'Avatar',
+                    'status_12' => 'status',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'discr_13' => 'string',
+                    'offres_id_14' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'u' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'discr_13' => 'discr',
+                    'offres_id_14' => 'offres_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'u',
+                    'email_1' => 'u',
+                    'roles_2' => 'u',
+                    'password_3' => 'u',
+                    'nom_4' => 'u',
+                    'prenom_5' => 'u',
+                    'tel_6' => 'u',
+                    'date_naissance_7' => 'u',
+                    'adresse_8' => 'u',
+                    'ville_9' => 'u',
+                    'git_10' => 'u',
+                    'avatar_11' => 'u',
+                    'status_12' => 'u',
+                    'discr_13' => 'u',
+                    'offres_id_14' => 'u',
+                ],
+            ],
+            'discriminatorColumns' => [
+                2 => [
+                    'u' => 'discr_13',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\User',
+                    'email_1' => 'App\\Entity\\User',
+                    'roles_2' => 'App\\Entity\\User',
+                    'password_3' => 'App\\Entity\\User',
+                    'nom_4' => 'App\\Entity\\Apprenant',
+                    'prenom_5' => 'App\\Entity\\Apprenant',
+                    'tel_6' => 'App\\Entity\\Apprenant',
+                    'date_naissance_7' => 'App\\Entity\\Apprenant',
+                    'adresse_8' => 'App\\Entity\\Apprenant',
+                    'ville_9' => 'App\\Entity\\Apprenant',
+                    'git_10' => 'App\\Entity\\Apprenant',
+                    'avatar_11' => 'App\\Entity\\Apprenant',
+                    'status_12' => 'App\\Entity\\Apprenant',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

@@ -36,8 +36,11 @@ class AbsenceRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('r')
             ->join('r.PromoAppre', 'pa')
+            ->join('pa.promotion', 'p')
             ->join('pa.apprenant', 'ap')
-            ->where('ap.Nom like :nom or ap.Prenom like :nom')
+            ->where('p.DateFin > :date')
+            ->setParameter('date', new \DateTime)
+            ->andwhere('ap.Nom like :nom or ap.Prenom like :nom')
             ->setParameter('nom', $nom)
             ->getQuery()->getResult();
     }

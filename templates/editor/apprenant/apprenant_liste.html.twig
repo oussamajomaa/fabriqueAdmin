@@ -51,23 +51,23 @@
                             <th style="width: 15%;">Actions</th>
                         </thead>
                         <tbody>
-                    
+
                             {% for apprenant in apprenants %}
                             <tr>
-                                <td>{{ apprenant.Fullname }}</td>
-                                <td>{{ apprenant.Git }}</td>
-                                <td>{{ apprenant.Email }}</td>
-                                <td><img src="{{ asset('uploads/brochures/') }}{{ apprenant.Avatar }}" alt="" class="avatar-sd"></td>
+                                <td>{{ apprenant.apprenant.Fullname }}</td>
+                                <td>{{ apprenant.apprenant.Git }}</td>
+                                <td>{{ apprenant.apprenant.Email }}</td>
+                                <td><img src="{{ asset('uploads/brochures/') }}{{ apprenant.apprenant.Avatar }}" alt="" class="avatar-sd"></td>
                     
                                 <!-- dans la dernère cellule, il trois liens: suuprimer, modifier et visualiser -->
                                 <td>
                                     <!-- visualiser un apprenant -->
                                     <a class="btn btn-info btn-sm modif_promotion my-1" title="visualiser" 
-                                        href="{{ path('editor_apprenant_show',{'id':apprenant.id}) }}"><i class="fa fa-eye"></i></a>
+                                        href="{{ path('editor_apprenant_show',{'id':apprenant.apprenant.id}) }}"><i class="fa fa-eye"></i></a>
                                         
                                     <!-- modifier un apprenant -->
                                     <a class="btn btn-success btn-sm modif_promotion my-1" title="modifier"
-                                        href="{{ path('editor_edit_apprenant',{'id':apprenant.id}) }}"><i class="far fa-edit"></i></a>
+                                        href="{{ path('editor_edit_apprenant',{'id':apprenant.apprenant.id}) }}"><i class="far fa-edit"></i></a>
                                     
 
                                     <!-- supprimer un apprenant qui va afficher d'abord un message de confirmation -->

@@ -57,9 +57,12 @@
                                 <td><a class="btn btn-info btn-sm modif_promotion" title="visualiser"
                                         href="{{ path('editor_pro_apprenant_show',{'id':apprenant.apprenant.id}) }}"><i class="fa fa-eye"></i></a>
 
+                                    {% if promotion.dateFin|date("Y/m/d")>'now'|date("Y/m/d") %}
+                                    
+
                                     <a class="btn btn-danger btn-sm delete-record my-1" title="retirer" href="#"><i
                                             class="fas fa-trash-alt delete-promotion"></i></a>
-
+                                    {% endif %}
                                     {# delete confirmation #}
                                     <div class="delete-confirm border bg-light  m-auto rounded p-3" style="position: absolute;top:40%;left:30%">
                                         <div>

@@ -56,10 +56,12 @@ class ReserveController extends AbstractController
      */
     public function pro_apprenant_show(Apprenant $apprenant, PromoAppreRepository $repo)
     {
-        return $this->render('reserve//apprenant_show.html.twig', [
+        return $this->render('reserve/apprenant_show.html.twig', [
             'apprenant' => $apprenant,
             'promotions' => $repo->findBy(['apprenant' => $apprenant])
         ]);
     }
+
+    
 
 }

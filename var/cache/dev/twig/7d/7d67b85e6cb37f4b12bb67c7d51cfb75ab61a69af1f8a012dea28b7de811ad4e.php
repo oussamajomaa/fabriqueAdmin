@@ -113,63 +113,72 @@ class __TwigTemplate_d6bad287d8ea32de10f0203b29ec906b34b4c8b22b5c309359986c081fe
                 </div>
                 ";
         // line 30
-        echo "                <div class=\"row mt-5  text-light\"  >
-                    <div class=\"col p-1 text-center\">
+        echo "                
+                
+                <div class=\"row mt-5  text-light\"  >
+                ";
+        // line 33
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 34
+            echo "                    <div class=\"col p-1 text-center\">
                         <a class=\"text-light\" href=\"";
-        // line 32
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_utilisateur");
-        echo "\">
+            // line 35
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_utilisateur");
+            echo "\">
                             <div class=\" bar alert-primary\">
                                 <i class=\"fas fa-users h1\"></i>
                                 <h2>Utilisateurs</h2>
                                 <h3>";
-        // line 36
-        echo twig_escape_filter($this->env, (isset($context["countUser"]) || array_key_exists("countUser", $context) ? $context["countUser"] : (function () { throw new RuntimeError('Variable "countUser" does not exist.', 36, $this->source); })()), "html", null, true);
-        echo "</h3>
+            // line 39
+            echo twig_escape_filter($this->env, (isset($context["countUser"]) || array_key_exists("countUser", $context) ? $context["countUser"] : (function () { throw new RuntimeError('Variable "countUser" does not exist.', 39, $this->source); })()), "html", null, true);
+            echo "</h3>
                             </div>
                         </a>
                     </div>
-                    <div class=\"col p-1 text-center\">
+                ";
+        }
+        // line 44
+        echo "                    <div class=\"col p-1 text-center\">
                         <a class=\"text-light\" href=\"";
-        // line 41
+        // line 45
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor_promo_liste");
         echo "\">
                             <div class=\" bar alert-secondary\">
                                 <i class=\"fas fa-certificate h1\"></i>
                                 <h3>Promotions</h3>
                                 <h3>";
-        // line 45
-        echo twig_escape_filter($this->env, (isset($context["countPromotion"]) || array_key_exists("countPromotion", $context) ? $context["countPromotion"] : (function () { throw new RuntimeError('Variable "countPromotion" does not exist.', 45, $this->source); })()), "html", null, true);
+        // line 49
+        echo twig_escape_filter($this->env, (isset($context["countPromotion"]) || array_key_exists("countPromotion", $context) ? $context["countPromotion"] : (function () { throw new RuntimeError('Variable "countPromotion" does not exist.', 49, $this->source); })()), "html", null, true);
         echo "</h3>
                             </div>
                         </a>
                     </div>
                     <div class=\"col  p-1 text-center\">
                         <a class=\"text-light\" href=\"";
-        // line 50
+        // line 54
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor_formation");
         echo "\">
                             <div class=\"alert-light bar\">
                                 <i class=\"fas fa-laptop-code h1\"></i>
                                 <h2>Formations</h2>
                                 <h3>";
-        // line 54
-        echo twig_escape_filter($this->env, (isset($context["countFormation"]) || array_key_exists("countFormation", $context) ? $context["countFormation"] : (function () { throw new RuntimeError('Variable "countFormation" does not exist.', 54, $this->source); })()), "html", null, true);
+        // line 58
+        echo twig_escape_filter($this->env, (isset($context["countFormation"]) || array_key_exists("countFormation", $context) ? $context["countFormation"] : (function () { throw new RuntimeError('Variable "countFormation" does not exist.', 58, $this->source); })()), "html", null, true);
         echo "</h3>
                             </div>
                         </a>
                     </div>
                     <div class=\"col  p-1 text-center\">
                         <a class=\"text-light\" href=\"";
-        // line 59
+        // line 63
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor_apprenant_liste");
         echo "\">
                             <div class=\"alert-success bar\">
                                 <i class=\"fas fa-user-graduate h1\"></i>
                                 <h2>Apprenants</h2>
                                 <h3>";
-        // line 63
-        echo twig_escape_filter($this->env, (isset($context["countApprenant"]) || array_key_exists("countApprenant", $context) ? $context["countApprenant"] : (function () { throw new RuntimeError('Variable "countApprenant" does not exist.', 63, $this->source); })()), "html", null, true);
+        // line 67
+        echo twig_escape_filter($this->env, (isset($context["countApprenant"]) || array_key_exists("countApprenant", $context) ? $context["countApprenant"] : (function () { throw new RuntimeError('Variable "countApprenant" does not exist.', 67, $this->source); })()), "html", null, true);
         echo "</h3>
                             </div>
                         </a>
@@ -189,68 +198,51 @@ class __TwigTemplate_d6bad287d8ea32de10f0203b29ec906b34b4c8b22b5c309359986c081fe
                     
                     <div class=\"col p-1 text-center\">
                         <a class=\"text-light\" href=\"";
-        // line 81
+        // line 85
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor_entreprise");
         echo "\">
                             <div class=\"alert-dark bar\">
                                 <i class=\"fas fa-chart-line h1\"></i>
                                 <h2>Entreprises</h2>
                                 <h3>";
-        // line 85
-        echo twig_escape_filter($this->env, (isset($context["countEntreprise"]) || array_key_exists("countEntreprise", $context) ? $context["countEntreprise"] : (function () { throw new RuntimeError('Variable "countEntreprise" does not exist.', 85, $this->source); })()), "html", null, true);
+        // line 89
+        echo twig_escape_filter($this->env, (isset($context["countEntreprise"]) || array_key_exists("countEntreprise", $context) ? $context["countEntreprise"] : (function () { throw new RuntimeError('Variable "countEntreprise" does not exist.', 89, $this->source); })()), "html", null, true);
         echo "</h3>
                             </div>
                         </a>
                     </div>
                     <div class=\"col p-1 text-center\">
                         <a class=\"text-light\" href=\"";
-        // line 90
+        // line 94
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor_offre");
         echo "\">
                             <div class=\"alert-info bar\">
                                 <i class=\"fas fa-toolbox h1\"></i>
                                 <h2>Stages</h2>
                                 <h3>";
-        // line 94
-        echo twig_escape_filter($this->env, (isset($context["countOffres"]) || array_key_exists("countOffres", $context) ? $context["countOffres"] : (function () { throw new RuntimeError('Variable "countOffres" does not exist.', 94, $this->source); })()), "html", null, true);
+        // line 98
+        echo twig_escape_filter($this->env, (isset($context["countOffres"]) || array_key_exists("countOffres", $context) ? $context["countOffres"] : (function () { throw new RuntimeError('Variable "countOffres" does not exist.', 98, $this->source); })()), "html", null, true);
         echo "</h3>
                             </div>
                         </a>
                     </div>
                     <div class=\"col p-1 text-center\">
                         <a class=\"text-light\" href=\"";
-        // line 99
+        // line 103
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor_contact");
         echo "\">
                             <div class=\"alert-danger bar\">
                                 <i class=\"fas fa-phone-alt h1\"></i>
                                 <h2>Contacts</h2>
                                 <h3>";
-        // line 103
-        echo twig_escape_filter($this->env, (isset($context["countContact"]) || array_key_exists("countContact", $context) ? $context["countContact"] : (function () { throw new RuntimeError('Variable "countContact" does not exist.', 103, $this->source); })()), "html", null, true);
+        // line 107
+        echo twig_escape_filter($this->env, (isset($context["countContact"]) || array_key_exists("countContact", $context) ? $context["countContact"] : (function () { throw new RuntimeError('Variable "countContact" does not exist.', 107, $this->source); })()), "html", null, true);
         echo "</h3>
                             </div>
                         </a>
                     </div>
                 </div>
-                ";
-        // line 109
-        echo "                ";
-        // line 188
-        echo "
-            
-
-
-            
-
-    
-
-
-
-
-            ";
-        // line 200
-        echo "           
+           
         </div>
     </div>
 </div>
@@ -275,7 +267,7 @@ class __TwigTemplate_d6bad287d8ea32de10f0203b29ec906b34b4c8b22b5c309359986c081fe
 
     public function getDebugInfo()
     {
-        return array (  253 => 200,  240 => 188,  238 => 109,  230 => 103,  223 => 99,  215 => 94,  208 => 90,  200 => 85,  193 => 81,  172 => 63,  165 => 59,  157 => 54,  150 => 50,  142 => 45,  135 => 41,  127 => 36,  120 => 32,  116 => 30,  111 => 26,  107 => 23,  101 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  239 => 107,  232 => 103,  224 => 98,  217 => 94,  209 => 89,  202 => 85,  181 => 67,  174 => 63,  166 => 58,  159 => 54,  151 => 49,  144 => 45,  141 => 44,  133 => 39,  126 => 35,  123 => 34,  121 => 33,  116 => 30,  111 => 26,  107 => 23,  101 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -309,7 +301,10 @@ class __TwigTemplate_d6bad287d8ea32de10f0203b29ec906b34b4c8b22b5c309359986c081fe
                     <i class=\"fas fa-home text-danger fa-lg mr-3\" style=\"font-size:32\"></i> <p class=\"badge badge-danger\">Tableau de bord</p>
                 </div>
                 {# second line, number of promotion, training, learner and partner #}
+                
+                
                 <div class=\"row mt-5  text-light\"  >
+                {% if is_granted('ROLE_ADMIN') %}
                     <div class=\"col p-1 text-center\">
                         <a class=\"text-light\" href=\"{{ path('admin_utilisateur') }}\">
                             <div class=\" bar alert-primary\">
@@ -319,6 +314,7 @@ class __TwigTemplate_d6bad287d8ea32de10f0203b29ec906b34b4c8b22b5c309359986c081fe
                             </div>
                         </a>
                     </div>
+                {% endif %}
                     <div class=\"col p-1 text-center\">
                         <a class=\"text-light\" href=\"{{ path('editor_promo_liste') }}\">
                             <div class=\" bar alert-secondary\">
@@ -387,98 +383,6 @@ class __TwigTemplate_d6bad287d8ea32de10f0203b29ec906b34b4c8b22b5c309359986c081fe
                         </a>
                     </div>
                 </div>
-                {# third line: details of all #}
-                {# <div class=\"row my-1 text-light\">
-                    <div class=\"col p-1\">
-                        <div class=\"bg-info p-2 rounded\">
-                            <h2>Apprenants</h2>
-                            <table class=\"table\">
-                                <thead>
-                                    <th scope=\"col\">Nom et Prénom</th>
-                                    <th scope=\"col\">Date de naissance</th>
-                                    <th scope=\"col\">Email</th>
-                                    <th scope=\"col\">Tel</th>
-                                </thead>
-                                {% for apprenant in apprenants %}
-                                <tr>
-                                    <td><a class=\"text-light\"
-                                            href=\"{{ path('editor_apprenant_show',{'id':apprenant.id}) }}\">{{apprenant.nom|upper}}
-                                            {{apprenant.prenom|upper}}</a></td>
-                                    <td><a class=\"text-light\"
-                                            href=\"{{ path('editor_apprenant_show',{'id':apprenant.id}) }}\">{{ apprenant.dateNaissance|date('d/m/Y') }}
-                                    </a></td>
-                                    <td><a class=\"text-light\"
-                                            href=\"{{ path('editor_apprenant_show',{'id':apprenant.id}) }}\">{{ apprenant.email }}</a></td>
-                                    
-                                    <td><a class=\"text-light\"
-                                            href=\"{{ path('editor_apprenant_show',{'id':apprenant.id}) }}\"></a>{{ apprenant.tel }}</td>
-                                </tr>
-                                {% endfor %}
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"row my-1 text-light\">
-                    <div class=\"col p-1\">
-                        <div class=\"bg-secondary p-2 rounded\" id=\"promotion\">
-                            <h2>Promotions</h2>
-                            <table class=\"table \">
-                                <thead>
-                                    <th scope=\"col\">Année</th>
-                                    <th scope=\"col\">Début</th>
-                                    <th scope=\"col\">Fin</th>
-                                    <th scope=\"col\">Formation</th>
-                                    <th scope=\"col\">N° Apprenants</th>
-                                </thead>
-                                    {% for promotion in promotions %}
-                                    <tr>
-                                            <td><a class=\"text-light\" href=\"{{ path('editor_promo_show',{'id':promotion.id}) }}\">{{promotion.annee}}</a></td>
-                                            <td><a class=\"text-light\" href=\"{{ path('editor_promo_show',{'id':promotion.id}) }}\">{{promotion.dateDebut|date('d/m/Y')}}</a></td>
-                                            <td><a class=\"text-light\" href=\"{{ path('editor_promo_show',{'id':promotion.id}) }}\">{{promotion.dateFin|date('d/m/Y')}}</a></td>
-                                            <td><a class=\"text-light\" href=\"{{ path('editor_promo_show',{'id':promotion.id}) }}\">{{promotion.formation.intitule}}</a></td>
-                                            <td><a class=\"text-light\" href=\"{{ path('editor_promo_show',{'id':promotion.id}) }}\">{{promotion.apprenants|length}}</a></td>
-                                        </tr>
-                                    {% endfor %}
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"row my-1 text-light\">
-                    <div class=\"col p-1\">
-                        <div class=\"bg-success p-2 rounded\" id=\"formation\">
-                            <h2>Formations</h2>
-                            <table class=\"table\">
-                                <thead>
-                                    <th scope=\"col\">Intitulé</th>
-                                    <th scope=\"col\">Diplôme</th>
-                                    <th scope=\"col\">Durée</th>
-                                    <th scope=\"col\">N° d'heures</th>
-                                </thead>
-                                    {% for formation in formations %}
-                                        <tr>
-                                            <td><a class=\"text-light\" href=\"{{ path('editor_formation',{'id':formation.id}) }}\">{{formation.intitule}}</a></td>
-                                            <td><a class=\"text-light\" href=\"{{ path('editor_formation',{'id':formation.id}) }}\">{{formation.diplome}}</a></td>
-                                            <td><a class=\"text-light\" href=\"{{ path('editor_formation',{'id':formation.id}) }}\">{{formation.duree}}</a></td>
-                                            <td><a class=\"text-light\" href=\"{{ path('editor_formation',{'id':formation.id}) }}\">{{formation.nombreHeure}}</a></td>
-                                        </tr>
-                                    {% endfor %}
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div> #}
-
-            
-
-
-            
-
-    
-
-
-
-
-            {# end body #}
            
         </div>
     </div>

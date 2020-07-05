@@ -205,6 +205,31 @@ class EditEntrepriseController extends AbstractController
     }
 
     /**
+     * @Route("/editor/contact/chercher{page<\d+>?1}", name="editor_contact_chercher")
+     */
+    public function contact_chercher(Request $request,ContactsRepository $repo, $page)
+    {
+        $nom = $request->get('chercher_contact');
+
+        $entreprise = $repo->findAllByNom($nom . "%");
+        
+        $limit = 10;
+        $start = $page * $limit - $limit;
+        $all = count($entreprise);
+        $pages = ceil($all / $limit);
+
+        return $this->render('editor/entreprise/contact_list.html.twig', [
+            'contacts' => $repo->findBy(['id'=> $entreprise], [], $limit, $start),
+            'pages' => $pages,
+            'page' => $page
+        ]);
+    }
+
+
+
+
+
+    /**
      * @Route("/editor/contact/delete/{id}", name="editor_contact_delete")
      */
     public function contact_delete(EntityManagerInterface $manager, Contacts $contact)

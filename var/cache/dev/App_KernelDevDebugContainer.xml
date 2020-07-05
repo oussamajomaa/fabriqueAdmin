@@ -336,12 +336,19 @@
     <service id="kernel" class="App\Kernel" public="true" synthetic="true">
       <tag name="routing.route_loader"/>
     </service>
-    <service id="App\Annotation\DoctrineListener" class="App\Annotation\DoctrineListener" autowire="true" autoconfigure="true"/>
+    <service id="App\Annotation\Encrypt" class="App\Annotation\Encrypt" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\AdminController" class="App\Controller\AdminController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.pNNo5z3.App\Controller\AdminController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ApprenantController" class="App\Controller\ApprenantController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.pNNo5z3.App\Controller\ApprenantController"/>
       </call>
     </service>
     <service id="App\Controller\EditAbsenceController" class="App\Controller\EditAbsenceController" public="true" autowire="true" autoconfigure="true">
@@ -3263,6 +3270,14 @@
         <argument>!Framework</argument>
       </call>
       <call method="addPath">
+        <argument>/var/www/html/FabriqueAdmin/templates/bundles/TwigBundle</argument>
+        <argument>Twig</argument>
+      </call>
+      <call method="addPath">
+        <argument>/var/www/html/FabriqueAdmin/templates/bundles/TwigBundle</argument>
+        <argument>!Twig</argument>
+      </call>
+      <call method="addPath">
         <argument>/var/www/html/FabriqueAdmin/vendor/doctrine/doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
@@ -4996,6 +5011,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ApprenantController" class="App\Controller\ApprenantController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ApprenantController" class="App\Controller\ApprenantController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ApprenantController" class="App\Controller\ApprenantController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\EditAbsenceController" class="App\Controller\EditAbsenceController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\EditAbsenceController" class="App\Controller\EditAbsenceController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\EditAbsenceController" class="App\Controller\EditAbsenceController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5316,6 +5334,12 @@
         <argument key="user" type="service" id=".errored..service_locator.VPb8Zl0.App\Entity\User"/>
       </argument>
     </service>
+    <service id=".service_locator.OaMhEs6" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repo" type="service" id="App\Repository\PromoAppreRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.0ru1kY4" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5348,12 +5372,6 @@
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.aaJkXFU" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="repo" type="service" id="App\Repository\ApprenantRepository"/>
-      </argument>
-    </service>
     <service id=".service_locator.ngWggRp" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5380,6 +5398,12 @@
       <argument type="collection">
         <argument key="apprenant" type="service" id=".errored..service_locator.vuHmK00.App\Entity\Apprenant"/>
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.aaJkXFU" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repo" type="service" id="App\Repository\ApprenantRepository"/>
       </argument>
     </service>
     <service id=".service_locator._oNslT6" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5514,7 +5538,7 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.F4uXN_m" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator._fRtQju" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::chercher" type="service" id=".service_locator.YFZkdf_"/>
@@ -5522,6 +5546,7 @@
         <argument key="App\Controller\AdminController::delete_user" type="service" id=".service_locator.VPb8Zl0"/>
         <argument key="App\Controller\AdminController::modif_user" type="service" id=".service_locator.YFZkdf_"/>
         <argument key="App\Controller\AdminController::utilisateur" type="service" id=".service_locator.YFZkdf_"/>
+        <argument key="App\Controller\ApprenantController::apprenant" type="service" id=".service_locator.OaMhEs6"/>
         <argument key="App\Controller\EditAbsenceController::absence" type="service" id=".service_locator.ara6PRl"/>
         <argument key="App\Controller\EditAbsenceController::absence_delete" type="service" id=".service_locator.pcH8xJ4"/>
         <argument key="App\Controller\EditAbsenceController::absence_edit" type="service" id=".service_locator.pcH8xJ4"/>
@@ -5532,13 +5557,14 @@
         <argument key="App\Controller\EditAbsenceController::retard_delete" type="service" id=".service_locator.edqph_9"/>
         <argument key="App\Controller\EditAbsenceController::retard_edit" type="service" id=".service_locator.edqph_9"/>
         <argument key="App\Controller\EditAbsenceController::retard_new" type="service" id=".service_locator.VXxFWvL"/>
-        <argument key="App\Controller\EditApprenantController::apprenant_liste" type="service" id=".service_locator.aaJkXFU"/>
+        <argument key="App\Controller\EditApprenantController::apprenant_liste" type="service" id=".service_locator.OaMhEs6"/>
         <argument key="App\Controller\EditApprenantController::apprenant_new" type="service" id=".service_locator.ngWggRp"/>
         <argument key="App\Controller\EditApprenantController::apprenant_show" type="service" id=".service_locator..rr8GJJ"/>
-        <argument key="App\Controller\EditApprenantController::chercher" type="service" id=".service_locator.aaJkXFU"/>
+        <argument key="App\Controller\EditApprenantController::chercher" type="service" id=".service_locator.OaMhEs6"/>
         <argument key="App\Controller\EditApprenantController::competence" type="service" id=".service_locator.aaJkXFU"/>
         <argument key="App\Controller\EditApprenantController::delete_apprenant" type="service" id=".service_locator.vuHmK00"/>
         <argument key="App\Controller\EditApprenantController::edit_apprenant" type="service" id=".service_locator.9Hskj3n"/>
+        <argument key="App\Controller\EditEntrepriseController::contact_chercher" type="service" id=".service_locator.PVxQlNM"/>
         <argument key="App\Controller\EditEntrepriseController::contact_delete" type="service" id=".service_locator.N4rWrnw"/>
         <argument key="App\Controller\EditEntrepriseController::contact_list" type="service" id=".service_locator.PVxQlNM"/>
         <argument key="App\Controller\EditEntrepriseController::edit_contact" type="service" id=".service_locator.LH8i5ka"/>
@@ -5573,6 +5599,7 @@
         <argument key="App\Controller\AdminController:delete_user" type="service" id=".service_locator.VPb8Zl0"/>
         <argument key="App\Controller\AdminController:modif_user" type="service" id=".service_locator.YFZkdf_"/>
         <argument key="App\Controller\AdminController:utilisateur" type="service" id=".service_locator.YFZkdf_"/>
+        <argument key="App\Controller\ApprenantController:apprenant" type="service" id=".service_locator.OaMhEs6"/>
         <argument key="App\Controller\EditAbsenceController:absence" type="service" id=".service_locator.ara6PRl"/>
         <argument key="App\Controller\EditAbsenceController:absence_delete" type="service" id=".service_locator.pcH8xJ4"/>
         <argument key="App\Controller\EditAbsenceController:absence_edit" type="service" id=".service_locator.pcH8xJ4"/>
@@ -5583,13 +5610,14 @@
         <argument key="App\Controller\EditAbsenceController:retard_delete" type="service" id=".service_locator.edqph_9"/>
         <argument key="App\Controller\EditAbsenceController:retard_edit" type="service" id=".service_locator.edqph_9"/>
         <argument key="App\Controller\EditAbsenceController:retard_new" type="service" id=".service_locator.VXxFWvL"/>
-        <argument key="App\Controller\EditApprenantController:apprenant_liste" type="service" id=".service_locator.aaJkXFU"/>
+        <argument key="App\Controller\EditApprenantController:apprenant_liste" type="service" id=".service_locator.OaMhEs6"/>
         <argument key="App\Controller\EditApprenantController:apprenant_new" type="service" id=".service_locator.ngWggRp"/>
         <argument key="App\Controller\EditApprenantController:apprenant_show" type="service" id=".service_locator..rr8GJJ"/>
-        <argument key="App\Controller\EditApprenantController:chercher" type="service" id=".service_locator.aaJkXFU"/>
+        <argument key="App\Controller\EditApprenantController:chercher" type="service" id=".service_locator.OaMhEs6"/>
         <argument key="App\Controller\EditApprenantController:competence" type="service" id=".service_locator.aaJkXFU"/>
         <argument key="App\Controller\EditApprenantController:delete_apprenant" type="service" id=".service_locator.vuHmK00"/>
         <argument key="App\Controller\EditApprenantController:edit_apprenant" type="service" id=".service_locator.9Hskj3n"/>
+        <argument key="App\Controller\EditEntrepriseController:contact_chercher" type="service" id=".service_locator.PVxQlNM"/>
         <argument key="App\Controller\EditEntrepriseController:contact_delete" type="service" id=".service_locator.N4rWrnw"/>
         <argument key="App\Controller\EditEntrepriseController:contact_list" type="service" id=".service_locator.PVxQlNM"/>
         <argument key="App\Controller\EditEntrepriseController:edit_contact" type="service" id=".service_locator.LH8i5ka"/>
@@ -5935,6 +5963,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.pNNo5z3" method="withContext"/>
     </service>
+    <service id=".service_locator.pNNo5z3.App\Controller\ApprenantController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\ApprenantController"/>
+      <argument>App\Controller\ApprenantController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.pNNo5z3" method="withContext"/>
+    </service>
     <service id=".service_locator.pNNo5z3.App\Controller\EditAbsenceController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\EditAbsenceController"/>
       <argument>App\Controller\EditAbsenceController</argument>
@@ -6146,12 +6180,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.F4uXN_m"/>
+      <argument type="service" id=".service_locator._fRtQju"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.F4uXN_m"/>
+      <argument type="service" id=".service_locator._fRtQju"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6550,7 +6584,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.F4uXN_m"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator._fRtQju"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
