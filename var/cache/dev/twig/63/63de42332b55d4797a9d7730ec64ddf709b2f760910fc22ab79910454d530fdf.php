@@ -218,7 +218,7 @@ class __TwigTemplate_136772441951d83038ac847aea8d58406ad7d9bcd5dfff4688e77a968c7
                                             <a class=\"btn btn-success non\" href=\"\">Non</a>
                                             <a class=\"btn btn-danger \" href=\"";
                 // line 85
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor_apprenant_delete", ["id" => twig_get_attribute($this->env, $this->source, $context["apprenant"], "id", [], "any", false, false, false, 85)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor_apprenant_delete", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["apprenant"], "apprenant", [], "any", false, false, false, 85), "id", [], "any", false, false, false, 85)]), "html", null, true);
                 echo "\">Oui</a>
                     
                                         </div>
@@ -422,7 +422,7 @@ class __TwigTemplate_136772441951d83038ac847aea8d58406ad7d9bcd5dfff4688e77a968c7
                                         </div>
                                         <div>
                                             <a class=\"btn btn-success non\" href=\"\">Non</a>
-                                            <a class=\"btn btn-danger \" href=\"{{ path('editor_apprenant_delete',{'id':apprenant.id}) }}\">Oui</a>
+                                            <a class=\"btn btn-danger \" href=\"{{ path('editor_apprenant_delete',{'id':apprenant.apprenant.id}) }}\">Oui</a>
                     
                                         </div>
                                     </div>

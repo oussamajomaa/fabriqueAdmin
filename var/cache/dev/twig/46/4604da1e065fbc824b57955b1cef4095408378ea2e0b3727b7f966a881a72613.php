@@ -180,7 +180,7 @@ class __TwigTemplate_5bbd2c3a6500dd6e493b3557c1ca81145da539fc19ff3923d17875e0c2b
 
                                 <div class=\"user-input-wrp mb-5\">
                                     <br />
-                                    <input type=\"text\" class=\"inputText in1\" name=\"email\" required />
+                                    <input type=\"text\" class=\"inputText in1\" name=\"email\" required autofocus/>
                                     <span class=\"floating-label\">Votre email</span>
                                     <br /><br /><br>
                                     <input type=\"password\" class=\"inputText in2 \" name=\"password\" required />
@@ -333,7 +333,7 @@ class __TwigTemplate_5bbd2c3a6500dd6e493b3557c1ca81145da539fc19ff3923d17875e0c2b
 
                                 <div class=\"user-input-wrp mb-5\">
                                     <br />
-                                    <input type=\"text\" class=\"inputText in1\" name=\"email\" required />
+                                    <input type=\"text\" class=\"inputText in1\" name=\"email\" required autofocus/>
                                     <span class=\"floating-label\">Votre email</span>
                                     <br /><br /><br>
                                     <input type=\"password\" class=\"inputText in2 \" name=\"password\" required />

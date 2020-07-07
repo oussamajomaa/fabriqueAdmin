@@ -174,11 +174,15 @@ class EditPromotionController extends AbstractController
      * 
      * @Route("/editor/promotion/delete/{id}", name="editor_delete_promotion")
      */
-    public function delete_promotion($id, PromotionRepository $repo)
+    public function delete_promotion(Promotion $promotion, PromoAppreRepository $repo)
     {
-        $promotion = $repo->find($id);
-
         $manager = $this->getDoctrine()->getManager();
+        $promotions = $repo->findBy(['promotion'=>$promotion]);
+        foreach ($promotions as $promoAppre){
+            $apprenant=$promoAppre->getApprenant();
+            $apprenant->setStatus('new');
+            $manager->persist($apprenant);
+        }
 
         $manager->remove($promotion);
         $manager->flush();

@@ -143,7 +143,7 @@ class __TwigTemplate_d6bad287d8ea32de10f0203b29ec906b34b4c8b22b5c309359986c081fe
         // line 45
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("editor_promo_liste");
         echo "\">
-                            <div class=\" bar alert-secondary\">
+                            <div class=\" bar alert-danger\">
                                 <i class=\"fas fa-certificate h1\"></i>
                                 <h3>Promotions</h3>
                                 <h3>";
@@ -317,7 +317,7 @@ class __TwigTemplate_d6bad287d8ea32de10f0203b29ec906b34b4c8b22b5c309359986c081fe
                 {% endif %}
                     <div class=\"col p-1 text-center\">
                         <a class=\"text-light\" href=\"{{ path('editor_promo_liste') }}\">
-                            <div class=\" bar alert-secondary\">
+                            <div class=\" bar alert-danger\">
                                 <i class=\"fas fa-certificate h1\"></i>
                                 <h3>Promotions</h3>
                                 <h3>{{ countPromotion }}</h3>

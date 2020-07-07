@@ -47,11 +47,11 @@ class __TwigTemplate_3344156b4528d81d012b86b134a02e9af0d41a3048a92899f3c8e223527
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 2, $this->source); })()), "flashes", [0 => "danger"], "method", false, false, false, 2));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             // line 3
-            echo "<div class=\"container alert alert-danger alert-dismissible fade show\" role=\"alert\">
-    <strong>";
+            echo "<div class=\"container-fluid alert alert-danger alert-dismissible fade show\" role=\"alert\">
+    <strong><center>";
             // line 4
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
-            echo "</strong>
+            echo "</center></strong>
     <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
         <span aria-hidden=\"true\">&times;</span>
     </button>
@@ -69,11 +69,11 @@ class __TwigTemplate_3344156b4528d81d012b86b134a02e9af0d41a3048a92899f3c8e223527
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "flashes", [0 => "warning"], "method", false, false, false, 11));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             // line 12
-            echo "<div class=\"container alert alert-warning alert-dismissible fade show\" role=\"alert\">
-    <strong>";
+            echo "<div class=\"container-fluid alert alert-secondary alert-dismissible fade show\" role=\"alert\">
+    <strong><center>";
             // line 13
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
-            echo "</strong>
+            echo "</center></strong>
     <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
         <span aria-hidden=\"true\">&times;</span>
     </button>
@@ -91,11 +91,11 @@ class __TwigTemplate_3344156b4528d81d012b86b134a02e9af0d41a3048a92899f3c8e223527
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 20));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             // line 21
-            echo "<div class=\"container alert alert-success alert-dismissible fade show\" role=\"alert\">
-    <strong>";
+            echo "<div class=\"container-fluid alert alert-success alert-dismissible fade show\" role=\"alert\">
+    <strong><center>";
             // line 22
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
-            echo "</strong>
+            echo "</center></strong>
     <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
         <span aria-hidden=\"true\">&times;</span>
     </button>
@@ -132,8 +132,8 @@ class __TwigTemplate_3344156b4528d81d012b86b134a02e9af0d41a3048a92899f3c8e223527
     {
         return new Source("<!-- flash messages -->
 {% for message in app.flashes('danger') %}
-<div class=\"container alert alert-danger alert-dismissible fade show\" role=\"alert\">
-    <strong>{{ message }}</strong>
+<div class=\"container-fluid alert alert-danger alert-dismissible fade show\" role=\"alert\">
+    <strong><center>{{ message }}</center></strong>
     <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
         <span aria-hidden=\"true\">&times;</span>
     </button>
@@ -141,8 +141,8 @@ class __TwigTemplate_3344156b4528d81d012b86b134a02e9af0d41a3048a92899f3c8e223527
 {% endfor %}
 
 {% for message in app.flashes('warning') %}
-<div class=\"container alert alert-warning alert-dismissible fade show\" role=\"alert\">
-    <strong>{{ message }}</strong>
+<div class=\"container-fluid alert alert-secondary alert-dismissible fade show\" role=\"alert\">
+    <strong><center>{{ message }}</center></strong>
     <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
         <span aria-hidden=\"true\">&times;</span>
     </button>
@@ -150,8 +150,8 @@ class __TwigTemplate_3344156b4528d81d012b86b134a02e9af0d41a3048a92899f3c8e223527
 {% endfor %}
 
 {% for message in app.flashes('success') %}
-<div class=\"container alert alert-success alert-dismissible fade show\" role=\"alert\">
-    <strong>{{ message }}</strong>
+<div class=\"container-fluid alert alert-success alert-dismissible fade show\" role=\"alert\">
+    <strong><center>{{ message }}</center></strong>
     <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
         <span aria-hidden=\"true\">&times;</span>
     </button>
